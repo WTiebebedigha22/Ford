@@ -1,5 +1,4 @@
 # Ford-site-Replica
-# Ford.com Replica
 
 A visually accurate and responsive replica of the [Ford official website](https://www.ford.com/), built using HTML, CSS, and JavaScript. This project aims to replicate the user interface and experience of Ford.com as closely as possible using only front-end technologies.
 
