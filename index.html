@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ford® - New Hybrid & Electric Vehicles ,SUVs, Crossovers, Trucks, Vans & Cars</title>
-    <link rel="icon" href="Assets/Images/Logo.png" type="image/png">>
+    <link rel="icon" href="Assets/Images/Logo.png" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- iconify library -->
+    <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>    <!-- iconify library -->
+    <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>
 
     <!-- Style sheet -->
     <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
 
 </head>
-<body><nav class="navbar fixed-top navbar-expand-lg container-fluid p-4">
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg container-fluid p-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.png" alt="logo"></a>
+            <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.png" alt="logo" style="height: 50px; width: auto; align-self: start; padding-bottom: 10px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <iconify-icon icon="system-uicons:menu-hamburger" class="hamburger-menu"></iconify-icon>
@@ -26,10 +33,6 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav align-items-center justify-content-end justify-content-xxl-center flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link text-white active mx-2 px-3 mb-2 mb-lg-0"
-                                aria-current="page" href="index.html">Ford</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
                                 href="showroom.html">Vehicles</a>
@@ -52,7 +55,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
-                                href="">Support & Service</a>
+                                href="support.html">Support & Service</a>
                         </li>
                     </ul>
                     
@@ -62,7 +65,7 @@
                         <ul class="navbar-nav social-div justify-content-end align-items-center">
                             <li class="nav-item">
                                 <a class="nav-link d-flex align-items-center px-3" href="#">
-                                    <iconify-icon icon="ri:search-fill" class="social-icon text-white"></iconify-icon>
+                                    <iconify-icon icon="ri:search-fill" class="social-icon text-white"> Search</iconify-icon>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -94,16 +97,17 @@
                     <button type="button" class="btn btn-outline-primary align-items-center ">
                         Find a Dealer
                     </button>
-                    <p class="display-1 text-white">*Important Details</h2>
+                    <p class="display-1 text-white">*Important Details</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="Legends">
+    <section id="Legends" style="background-color: darkblue;">
         <h2>Two Legends Breaking New Ground</h2>
         <div class="model-cards">
             <div class="card">
+                <img src="Assets/Images/expedition home.avif">
                 <h3>Epic Family Memories on Every Trip</h3>
                 <p>The all-new 2025 Ford Expedition® and Expedition® MAX models are ready for family adventure and equipped for lifelong memories. They feature bold, thoughtfully designed exteriors and plush, adaptable interiors. Intently crafted to help you get more from every moment.</p>
                 <button type="button" class="btn btn-fill-primary align-items-center " href="Expedition.html">
@@ -111,6 +115,7 @@
                 </button>
             </div>
             <div class="card">
+                <img src="Assets/Images/lobo.avif">
                 <h3>The New F-150® Lobo™ Package</h3>
                 <p>Straight up, it’s all badass street machine. For those who feed off the pulse of the city after dark. With design that’s bold and loaded with attitude.</p>
                 <button type="button" class="btn btn-fill-primary align-items-center " href="f-150.html">
@@ -123,10 +128,166 @@
         </div>
     </section>
 
+    <section id="beyond">
+        <h2>Beyond the Drivers Seat</h2>
+        <div class="spirit">
+            <h3>The Spirit of Racing is in Every Ford</h3>
+            <p>Racing DNA is inside every Ford. <br> <a href="">Vehicle details</a> </p>
+            <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">
+                        Ford Performance 
+            </button>
+        </div>
+        <div class="together">
+            <img src="Assets/Images/behind the driver.avif">
+            <h3>Throughout America. <br>Across the Globe.</h3>
+            <p>Ford Building Togeyjer is an initiative dedicateed to giving back. Discover how we've leveraged the strength of our dealer network, along with our nonprofit partners.</p>
+            <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">
+                Get Involved 
+            </button>
+        </div>
+    </section>
+    
+    <section id="power-tabs" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">The Power is Yours</h2>
+        <p class="text-center mb-5">Get pumped up. Get plugged in. Or do a little bit of both. While finding your next Ford vehicle, one thing's more important than the power you choose: What you choose to do with it.</p>
+        <ul class="nav nav-tabs justify-content-center" id="powerTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="engine-tab" data-bs-toggle="tab" data-bs-target="#engine" type="button" role="tab" aria-controls="engine" aria-selected="true">Engine</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="transmission-tab" data-bs-toggle="tab" data-bs-target="#transmission" type="button" role="tab" aria-controls="transmission" aria-selected="false">Transmission</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="battery-tab" data-bs-toggle="tab" data-bs-target="#battery" type="button" role="tab" aria-controls="battery" aria-selected="false">Battery</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="performance-tab" data-bs-toggle="tab" data-bs-target="#performance" type="button" role="tab" aria-controls="performance" aria-selected="false">Performance</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="efficiency-tab" data-bs-toggle="tab" data-bs-target="#efficiency" type="button" role="tab" aria-controls="efficiency" aria-selected="false">Efficiency</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="powerTabContent">
+            <div class="tab-pane fade show active" id="engine" role="tabpanel" aria-labelledby="engine-tab">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h3>Engine Specifications</h3>
+                        <p>Explore the powerful engine options available across our vehicle lineup. From robust V8s to efficient EcoBoost engines, Ford offers a range of choices to suit every need.</p>
+                        <ul>
+                            <li>2.3L EcoBoost I-4 Engine</li>
+                            <li>2.7L EcoBoost V6 Engine</li>
+                            <li>3.5L EcoBoost V6 Engine</li>
+                            <li>5.0L Ti-VCT V8 Engine</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="Assets/Images/engine.jpg" class="img-fluid rounded" alt="Engine">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="transmission" role="tabpanel" aria-labelledby="transmission-tab">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <img src="Assets/Images/transmission.jpg" class="img-fluid rounded" alt="Transmission">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Advanced Transmission Systems</h3>
+                        <p>Ford's advanced transmission systems are designed for smooth shifts and optimal power delivery, enhancing both performance and fuel economy.</p>
+                        <ul>
+                            <li>10-Speed Automatic Transmission</li>
+                            <li>6-Speed Manual Transmission</li>
+                            <li>Continuously Variable Transmission (CVT)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="battery" role="tabpanel" aria-labelledby="battery-tab">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h3>Electric Vehicle Battery Technology</h3>
+                        <p>Our electric vehicles feature cutting-edge battery technology, providing impressive range and fast charging capabilities for a sustainable driving experience.</p>
+                        <ul>
+                            <li>Extended Range Battery</li>
+                            <li>Standard Range Battery</li>
+                            <li>Liquid-Cooled Lithium-Ion</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="Assets/Images/battery.jpg" class="img-fluid rounded" alt="Battery">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="performance" role="tabpanel" aria-labelledby="performance-tab">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <img src="Assets/Images/performance.jpg" class="img-fluid rounded" alt="Performance">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Unleash True Performance</h3>
+                        <p>Experience exhilarating performance with Ford's high-output engines and performance-tuned suspensions, designed for the ultimate driving thrill.</p>
+                        <ul>
+                            <li>Horsepower: Up to 760 hp</li>
+                            <li>Torque: Up to 750 lb-ft</li>
+                            <li>0-60 mph: As low as 3.5 seconds</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="efficiency" role="tabpanel" aria-labelledby="efficiency-tab">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h3>Optimized Fuel Efficiency</h3>
+                        <p>Ford vehicles are engineered for impressive fuel efficiency, helping you go further with less. Our hybrid and EcoBoost technologies lead the way in economical driving.</p>
+                        <ul>
+                            <li>Hybrid Powertrains</li>
+                            <li>Auto Start-Stop Technology</li>
+                            <li>Aerodynamic Design</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="Assets/Images/efficiency.jpg" class="img-fluid rounded" alt="Efficiency">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="services" style="background-color: darkblue;">
+        <div class="model-cards">
+            <div class="card">
+                <img src="Assets/Images/hands.avif">
+                <h3>Hands-Free Highway Driving</h3>
+                <p>The all-new 2025 Ford Expedition® and Expedition® MAX models are ready for family adventure and equipped for lifelong memories. They feature bold, thoughtfully designed exteriors and plush, adaptable interiors. Intently crafted to help you get more from every moment.</p>
+                <button type="button" class="btn btn-fill-primary align-items-center " href="Expedition.html">
+                        Get Details 
+                </button>
+            </div>
+            <div class="card">
+                <img src="Assets/Images/connected.jpg">
+                <h3>Ford Connected Services</h3>
+                <p>Straight up, it’s all badass street machine. For those who feed off the pulse of the city after dark. With design that’s bold and loaded with attitude.</p>
+                <button type="button" class="btn btn-fill-primary align-items-center " href="f-150.html">
+                        Get Details 
+                </button>
+            </div>
+            <div class="card">
+                <img src="Assets/Images/complimentary.avif">
+                <h3>Complimentary Mobile Service</h3>
+                <p>Straight up, it’s all badass street machine. For those who feed off the pulse of the city after dark. With design that’s bold and loaded with attitude.</p>
+                <button type="button" class="btn btn-fill-primary align-items-center " href="f-150.html">
+                        Get Details 
+                </button>
+            </div>
+        </div>
+    </section>
+
     <section id="New-models">
         <h2>Thrilling. Liberating. Hardworking. Iconic</h2>
         <div class="models-cards">
             <div class="card">
+                <img src="Assets/Images/mustang_home.webp">
                 <h3>Mustang®</h3>
                 <p>Raising heart rates for 60 years. Tailor the perfect Mustang for you, whether it's a workday or track day.</p>
                 <button type="button" class="btn btn-fill-primary align-items-center " href="mustang.html">
@@ -134,6 +295,7 @@
                 </button>
             </div>
             <div class="card">
+                <img src="Assets/Images/bronco_home.avif">
                 <h3>Bronco®</h3>
                 <p>The trail awaits. So take off the doors, strap in, and unleash the SUV that's synonymous with adventure.</p>
                 <button type="button" class="btn btn-fill-primary align-items-center " href="bronco.html">
@@ -141,6 +303,7 @@
                 </button>
             </div>
             <div class="card">
+                <img src="Assets/Images/f150_home.avif">
                 <h3>F-150®</h3>
                 <p>If there's work ot be done or weekend fun to be had, just look around. A F-150 turck is probably there.</p>
                 <button type="button" class="btn btn-fill-primary align-items-center " href="f-150.html">
@@ -254,5 +417,8 @@
         </div>
     </section>
 
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
 </body>
 </html>
