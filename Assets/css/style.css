@@ -244,6 +244,82 @@ h2 {
     display: inline-block;
 }
 
+/* Beyond Section Layout */
+#beyond {
+    padding: 60px 0; /* Add padding for top and bottom */
+    text-align: center; /* Center text for the section heading */
+}
+
+#beyond h2 {
+    font-size: 2.5rem; /* Heading size */
+    color: #00205B; /* Dark blue color */
+    margin-bottom: 40px; /* Space below the heading */
+}
+
+.beyond-content-wrapper {
+    display: flex; /* Use flexbox to arrange children side-by-side */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center the items horizontally */
+    gap: 30px; /* Space between the two content blocks */
+    max-width: 1200px; /* Limit the overall width of the content */
+    margin: 0 auto; /* Center the wrapper itself */
+    padding: 0 15px; /* Add some horizontal padding */
+}
+
+.spirit,
+.together {
+    background-color: #ffffff; /* White background for content blocks */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 2rem; /* Padding inside the blocks */
+    flex: 1 1 calc(50% - 15px); /* Each item takes roughly 50% width minus half the gap */
+    max-width: 550px; /* Max width for each individual card */
+    box-sizing: border-box; /* Include padding in width calculation */
+    text-align: left; /* Align text to the left within each block */
+}
+
+.together img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Round the image corners */
+    margin-bottom: 1rem; /* Space below the image */
+}
+
+.spirit h3,
+.together h3 {
+    font-size: 1.8rem; /* Heading size */
+    color: #00205B; /* Dark blue color */
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 1rem; /* Space below heading */
+}
+
+.spirit p,
+.together p {
+    font-size: 1rem; /* Font size for paragraph */
+    color: #555; /* Dark gray color */
+    margin-bottom: 1.5rem; /* Space below paragraph */
+}
+
+.spirit .btn,
+.together .btn {
+    margin-top: 1rem; /* Space above button */
+    display: inline-block; /* Ensure button is inline-block */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .beyond-content-wrapper {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .spirit,
+    .together {
+        flex: 1 1 90%; /* Take up more width when stacked */
+        max-width: 450px; /* Limit max width for better readability */
+    }
+}
+
 /* Power Tabs Section */
 #power-tabs {
     background-color: #f8f9fa; /* Light background for the section */
@@ -304,28 +380,9 @@ h2 {
     line-height: 1.6;
 }
 
-#power-tabs .tab-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-#power-tabs .tab-content ul li {
-    margin-bottom: 8px;
-    color: #343a40;
-}
-
-#power-tabs .tab-content ul li::before {
-    content: "\2022"; /* Bullet point */
-    color: #00205B;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
 #power-tabs .tab-content img {
-    max-height: 250px; /* Limit image height */
-    object-fit: cover; /* Ensure image covers the area */
+    image-resolution: max;
+    object-fit: cover;
     width: 100%;
 }
 
@@ -381,6 +438,28 @@ h2 {
     display: inline-block; /* Ensure button is inline */
 }
 
+/* Newsletter Section Styles */
+.newsletter-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    margin-top: 60px;
+}
+
+.newsletter-section h3 {
+    color: #00205B;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.newsletter-section p {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.newsletter-form .input-group {
+    max-width: 500px;
+    margin-left: auto;
+}
 
 /* Footer */
 #footer {
