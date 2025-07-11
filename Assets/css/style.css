@@ -28,7 +28,7 @@ body {
     position: relative;
 }
 .navbar-nav .nav-link {
-    color: #ffffff !important; /* Already white */
+    color: #000 !important; 
     font-weight: 600;
     text-transform: uppercase;
     padding: 0.7rem 1rem;
@@ -38,7 +38,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #B0DFFF !important; /* Lighter blue on hover */
+    color: #00205B !important; /* Lighter blue on hover */
     background-color: rgba(255, 255, 255, 0.1); /* Slightly more visible background on hover for transparent nav */
     border-radius: 4px;
 }
@@ -50,12 +50,12 @@ body {
 /* Right-side Social/Utility Icons */
 .social-icon {
     font-size: 1.3rem;
-    color: #ffffff; /* Already white */
+    color: #000; /* Already white */
     transition: color 0.3s ease;
 }
 
 .social-icon:hover {
-    color: #B0DFFF;
+    color: #00205B;
 }
 
 /* Offcanvas Menu (Mobile/Tablet) - Keep solid background for readability when open */
@@ -71,16 +71,16 @@ body {
 
 /* Dropdown Menu - Keep solid background for readability */
 .navbar-nav .dropdown-menu {
-    background-color: #00205B; /* Keep solid for readability */
+    background-color: #ffffff; /* Keep solid for readability */
     border: none;
-    border-radius: 0;
+    border-radius: 5%;
     padding: 0.5rem 0;
     min-width: 200px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-nav .dropdown-menu li a {
-    color: #ffffff; /* Already white */
+    color: #000; /* Already white */
     padding: 0.8rem 1.5rem;
     transition: background-color 0.2s ease, color 0.2s ease;
     font-size: 0.9rem;
@@ -91,6 +91,79 @@ body {
     background-color: #1060D0;
     color: #ffffff;
 }
+
+/* Dropdown Menu - Keep solid background for readability */
+.navbar-nav .profile-dropdown-menu {
+    background-color: #ffffff; /* Keep solid for readability */
+    border: none;
+    border-radius: 2.5%;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav .profile-dropdown-menu p {
+    color: #000;
+}
+
+.navbar-nav .profile-dropdown-menu li a {
+    color: #000; /* Already white */
+    padding: 0.8rem 1.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.navbar-nav .profile-dropdown-menu li a:hover {
+    background-color: #1060D0;
+    color: #ffffff;
+}
+.social-icon {
+            color: #000 !important; /* Making all icons black */
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            opacity: 0.8;
+        }
+        
+        #search-bar {
+            position: absolute;
+            right: 0;
+            top: 100%;
+            width: 250px;
+            display: none;
+            z-index: 1000;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .profile-dropdown-menu {
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: white;
+            min-width: 250px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 1000;
+        }
+        
+        .profile-dropdown-menu.show {
+            display: block;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+
 /* Hero Section */
 #hero {
     background-size: cover;
