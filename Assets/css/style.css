@@ -7,19 +7,36 @@ body {
     padding: 0;
     background-color: #f8f8f8; /* Light gray background */
 }
-
+.btn{
+    border-radius: 30px;
+}
 /* Navigation Bar */
 .navbar {
-    background-color: transparent; /* Changed to transparent */
-    padding: 0.8rem 0;
-    box-shadow: none; /* Removed or adjusted shadow for transparent look */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1030;
+    padding: 15px 0;
 }
-
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+.secondary-nav {
+    background-color: #001A42;
+    padding: 10px 0;
+}
+.secondary-nav ul {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.secondary-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+}
+.secondary-nav a.active {
+    border-bottom: 2px solid #2D7BB9;
+}
 /* ... (rest of the .navbar-brand, .navbar-toggler, .hamburger-menu rules remain the same as they already use white/transparent elements) ... */
 
 /* Main Navigation Links */
@@ -38,7 +55,7 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #00205B !important; /* Lighter blue on hover */
+    color: #001A42 !important; /* Lighter blue on hover */
     background-color: rgba(255, 255, 255, 0.1); /* Slightly more visible background on hover for transparent nav */
     border-radius: 4px;
 }
@@ -55,12 +72,12 @@ body {
 }
 
 .social-icon:hover {
-    color: #00205B;
+    color: #001A42;
 }
 
 /* Offcanvas Menu (Mobile/Tablet) - Keep solid background for readability when open */
 .offcanvas {
-    background-color: #00205B; /* Keep solid for readability */
+    background-color: #001A42; /* Keep solid for readability */
     color: #ffffff;
 }
 
@@ -80,7 +97,7 @@ body {
 }
 
 .navbar-nav .dropdown-menu li a {
-    color: #000; /* Already white */
+    color: black;
     padding: 0.8rem 1.5rem;
     transition: background-color 0.2s ease, color 0.2s ease;
     font-size: 0.9rem;
@@ -93,31 +110,33 @@ body {
 }
 
 /* Dropdown Menu - Keep solid background for readability */
-.navbar-nav .profile-dropdown-menu {
-    background-color: #ffffff; /* Keep solid for readability */
-    border: none;
-    border-radius: 2.5%;
-    padding: 0.5rem 0;
-    min-width: 200px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.navbar-nav {
+    display: flex;
+    align-items: center;
 }
 
-.navbar-nav .profile-dropdown-menu p {
-    color: #000;
+.social-div {
+    margin-left: auto; /* Pushes the social icons to the right */
 }
 
-.navbar-nav .profile-dropdown-menu li a {
-    color: #000; /* Already white */
-    padding: 0.8rem 1.5rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    font-size: 0.9rem;
-    white-space: nowrap;
+#search-bar {
+    width: 200px; /* Adjust width as needed */
+    margin-left: 10px; /* Space between icon and input */
 }
 
-.navbar-nav .profile-dropdown-menu li a:hover {
-    background-color: #1060D0;
-    color: #ffffff;
+.profile-dropdown-menu {
+    display: none; /* Hide dropdown by default */
 }
+
+.dropdown:hover .profile-dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-menu {
+    min-width: 2000px;
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+}
+
 .social-icon {
             color: #000 !important; /* Making all icons black */
             font-size: 1.5rem;
@@ -160,8 +179,18 @@ body {
             display: block;
         }
         
+        
         .nav-link:hover {
             background-color: rgba(0,0,0,0.05);
+        }
+        
+        .tab-content,
+        .tab-pane {
+            height: 100%;
+        }
+        
+        .object-fit-cover {
+            object-fit: cover;
         }
 
 /* Hero Section */
@@ -188,7 +217,7 @@ body {
 #hero .btn {
     font-size: 1.1rem;
     padding: 12px 30px;
-    border-radius: 5px;
+    border-radius: 30px;
     margin: 0 10px;
     transition: all 0.3s ease;
 }
@@ -200,8 +229,8 @@ body {
 }
 
 .btn-fill-primary:hover {
-    background-color: #00205B;
-    border-color: #00205B;
+    background-color: #001A42;
+    border-color: #001A42;
 }
 
 .btn-outline-primary {
@@ -234,22 +263,44 @@ h2 {
 /* Model Cards (Legends) */
 .model-cards {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25%;
-    padding: 10px;
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
 }
 
 .model-cards .card {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
-    max-width: 400px;
-    flex: 1 1 calc(50% - 2rem); /* For 2 columns */
+    flex: 1; /* Equal width for both cards */
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 0; /* Allows flex items to shrink below content size */
+}
+
+.model-cards .card-img-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    aspect-ratio: 16/9; /* Maintain image aspect ratio */
+}
+
+.model-cards .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.model-cards .card-content {
+    flex: 0 0 auto;
 }
 
 .model-cards .card:hover {
@@ -258,28 +309,44 @@ h2 {
 }
 
 .model-cards .card h3 {
-    font-size: 1.8rem;
-    color: #00205B;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #001A42;
+    margin-bottom: 0.75rem;
 }
 
 .model-cards .card p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #555;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
 }
 
 .model-cards .card .btn {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #001A42;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.model-cards .card .btn:hover {
+    background-color: #00308F;
+}
+
+@media (max-width: 768px) {
+    .model-cards {
+        flex-direction: column;
+    }
 }
 
 /* Model Cards (New Models) */
 .models-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 25%;
+    justify-content: space-between; /* Space between cards */
     padding: 10px;
 }
 
@@ -289,10 +356,11 @@ h2 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     text-align: center;
-    max-width: 400px;
-    flex: 1 1 calc(33% - 2rem); /* For 3 columns */
+    max-width: 30%; /* Set max-width to 30% for 3 columns */
+    flex: 1 1 calc(30% - 2rem); /* For 3 columns with some margin */
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 1rem; /* Add margin for spacing */
 }
 
 .models-cards .card:hover {
@@ -302,7 +370,7 @@ h2 {
 
 .models-cards .card h3 {
     font-size: 1.8rem;
-    color: #00205B;
+    color: #001A42;
     margin-bottom: 1rem;
 }
 
@@ -325,7 +393,7 @@ h2 {
 
 #beyond h2 {
     font-size: 2.5rem; /* Heading size */
-    color: #00205B; /* Dark blue color */
+    color: #001A42; /* Dark blue color */
     margin-bottom: 40px; /* Space below the heading */
 }
 
@@ -361,7 +429,7 @@ h2 {
 .spirit h3,
 .together h3 {
     font-size: 1.8rem; /* Heading size */
-    color: #00205B; /* Dark blue color */
+    color: #001A42; /* Dark blue color */
     margin-top: 0; /* Remove default top margin */
     margin-bottom: 1rem; /* Space below heading */
 }
@@ -400,7 +468,7 @@ h2 {
 }
 
 #power-tabs h2 {
-    color: #00205B; /* Dark blue heading */
+    color: #001A42; /* Dark blue heading */
     margin-bottom: 40px;
     font-size: 2.5rem;
     font-weight: 700;
@@ -425,11 +493,11 @@ h2 {
 #power-tabs .nav-tabs .nav-item .nav-link:hover {
     border-color: #e9ecef #e9ecef #dee2e6;
     background-color: #e9ecef;
-    color: #00205B;
+    color: #001A42;
 }
 
 #power-tabs .nav-tabs .nav-item .nav-link.active {
-    color: #00205B;
+    color: #001A42;
     background-color: #fff;
     border-color: #dee2e6 #dee2e6 #fff;
     font-weight: 700;
@@ -443,14 +511,21 @@ h2 {
 }
 
 #power-tabs .tab-content h3 {
-    color: #00205B;
+    color: #fff;
     margin-bottom: 15px;
-    font-size: 1.8rem;
+    padding-bottom: 10px;;
+    font-size: 2.5rem;
 }
 
-#power-tabs .tab-content p {
-    color: #343a40;
+#power-tabs .tab-content a {
+    color: #fff;
     line-height: 1.6;
+    padding-bottom: 5px;
+}
+
+#power-tabs .tab-content button{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #power-tabs .tab-content img {
@@ -461,54 +536,43 @@ h2 {
 
 /* Services Section */
 #services {
-    padding: 60px 0; /* Add padding for top and bottom */
+    padding: 20px;
 }
 
-.model-cards {
+.services-cards {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
-    justify-content: center; /* Center the cards */
-    gap: 20px; /* Space between cards */
-    padding: 10px;
+    justify-content: space-between; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
 }
 
-.model-cards .card {
-    background-color: #ffffff; /* White background for cards */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    text-align: center;
-    max-width: 300px; /* Set a max width for cards */
-    flex: 1 1 calc(30% - 20px); /* Adjust for 3 columns with gap */
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card {
+    background-color: white; /* Card background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    width: 30%; /* Width of each card */
+    margin: 10px; /* Margin around each card */
+    padding: 20px; /* Padding inside each card */
+    text-align: center; /* Center text */
 }
 
-.model-cards .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.card img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
 }
 
-.model-cards .card img {
-    max-width: 100%; /* Ensure images are responsive */
-    border-radius: 8px; /* Round the image corners */
+.btn {
+    margin-top: 10px; /* Space above button */
+    padding: 10px 20px; /* Button padding */
+    background-color: darkblue; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
-.model-cards .card h3 {
-    font-size: 1.5rem; /* Adjust heading size */
-    color: #00205B; /* Dark blue color */
-    margin: 1rem 0; /* Margin for spacing */
-}
-
-.model-cards .card p {
-    font-size: 1rem; /* Font size for paragraph */
-    color: #555; /* Dark gray color */
-    margin-bottom: 1.5rem; /* Margin for spacing */
-}
-
-.model-cards .card .btn {
-    margin-top: 1rem; /* Margin for button */
-    display: inline-block; /* Ensure button is inline */
+.btn:hover {
+    background-color: navy; /* Darker shade on hover */
 }
 
 /* Newsletter Section Styles */
@@ -519,7 +583,7 @@ h2 {
 }
 
 .newsletter-section h3 {
-    color: #00205B;
+    color: #001A42;
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
@@ -536,7 +600,7 @@ h2 {
 
 /* Footer */
 #footer {
-    background-color: #00205B; /* Dark Ford Blue */
+    background-color: #001A42; /* Dark Ford Blue */
     color: #ffffff;
     padding-top: 3rem;
     margin-top: 4rem;
