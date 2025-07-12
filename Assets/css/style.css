@@ -156,6 +156,7 @@ body {
             z-index: 1000;
             margin-top: 5px;
             transition: all 0.3s ease;
+            border-radius: 20px;
         }
         
         .nav-item {
@@ -257,7 +258,7 @@ h2 {
     font-weight: bold;
     margin-top: 3rem;
     margin-bottom: 2rem;
-    color: whitesmoke;
+    color: #001A42;
 }
 
 /* Model Cards (Legends) */
@@ -274,12 +275,12 @@ h2 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     text-align: center;
-    flex: 1; /* Equal width for both cards */
+    flex: 1;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-width: 0; /* Allows flex items to shrink below content size */
+    min-width: 300px; /* Allows flex items to shrink below content size */
 }
 
 .model-cards .card-img-container {
@@ -564,10 +565,10 @@ h2 {
 .btn {
     margin-top: 10px; /* Space above button */
     padding: 10px 20px; /* Button padding */
-    background-color: darkblue; /* Button background color */
+    background-color: #001A42; /* Button background color */
     color: white; /* Button text color */
     border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners for button */
+    border-radius: 20px; /* Rounded corners for button */
     cursor: pointer; /* Pointer cursor on hover */
 }
 
