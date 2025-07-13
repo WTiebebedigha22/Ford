@@ -111,14 +111,8 @@
     
     
         initChocolat();
-
-
-  });
-
-
-})(jQuery);
-
-// Toggle search bar
+    
+        // Toggle search bar
         document.getElementById('search-icon').addEventListener('click', function(event) {
             event.preventDefault();
             const searchBar = document.getElementById('search-bar');
@@ -155,3 +149,78 @@
                 searchBar.style.display = 'none';
             }
         });
+
+
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const applyFiltersBtn = document.getElementById('applyFilters');
+    const resetFiltersBtn = document.getElementById('resetFilters');
+    const modelYearSelect = document.getElementById('modelYear');
+    const marketSelect = document.getElementById('market');
+    const powerSourceSelect = document.getElementById('powerSource');
+    const bodyStyleSelect = document.getElementById('bodyStyle');
+    const vehicleCards = document.querySelectorAll('.vehicle-card');
+
+    function applyFilters() {
+        const selectedModelYear = modelYearSelect.value;
+        const selectedMarket = marketSelect.value;
+        const selectedPowerSource = powerSourceSelect.value;
+        const selectedBodyStyle = bodyStyleSelect.value;
+
+        vehicleCards.forEach(card => {
+            const cardCategory = card.dataset.category;
+            const cardPower = card.dataset.power;
+            // For model year and market, you'd typically need data attributes on the cards
+            // For simplicity, this example focuses on category and power source.
+
+            let showCard = true;
+
+            // Filter by Power Source
+            if (selectedPowerSource !== 'Gas' && selectedPowerSource !== 'All') { // Assuming 'Gas' is the default and 'All' would show everything
+                if (cardPower !== selectedPowerSource.toLowerCase()) {
+                    showCard = false;
+                }
+            }
+
+            // Filter by Body Style (Category)
+            if (selectedBodyStyle !== 'Sedan' && selectedBodyStyle !== 'All') { // Assuming 'Sedan' is the default and 'All' would show everything
+                let bodyStyleMatch = false;
+                if (selectedBodyStyle === 'suv-crossover' && cardCategory === 'suv') {
+                    bodyStyleMatch = true;
+                } else if (selectedBodyStyle === 'truck-van' && cardCategory === 'truck') {
+                    bodyStyleMatch = true;
+                } else if (selectedBodyStyle === 'sedan' && cardCategory === 'car') { // Assuming 'car' category maps to 'sedan' body style
+                    bodyStyleMatch = true;
+                }
+                // Add more conditions for other body styles if needed
+                
+                if (!bodyStyleMatch) {
+                    showCard = false;
+                }
+            }
+
+            if (showCard) {
+                card.style.display = 'block'; // Or 'flex' depending on your CSS layout
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function resetFilters() {
+        modelYearSelect.value = 'Current';
+        marketSelect.value = 'Personal';
+        powerSourceSelect.value = 'Gas';
+        bodyStyleSelect.value = 'Sedan';
+        
+        vehicleCards.forEach(card => {
+            card.style.display = 'block'; // Show all cards
+        });
+    }
+
+    applyFiltersBtn.addEventListener('click', applyFilters);
+    resetFiltersBtn.addEventListener('click', resetFilters);
+});
+})(jQuery);
