@@ -9,10 +9,11 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <!-- iconify library -->
     <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>
+
     <!-- Style sheet -->
     <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+    <link href="https://fonts.cdnfonts.com/css/ford-antenna" rel="stylesheet">
 
 </head>
 <body>
@@ -63,7 +64,7 @@
                         <ul class="navbar-nav social-div justify-content-end align-items-center">
                             <li class="nav-item">
                                 <a class="nav-link d-flex align-items-center px-3" href="#">
-                                    <iconify-icon icon="ri:search-fill" class="social-icon text-white"></iconify-icon>
+                                    <iconify-icon icon="ri:search-fill" class="social-icon text-white"> Search</iconify-icon>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -83,116 +84,401 @@
             </div>
         </div>
     </nav>
-    <section id="footer">
-        <div class="container footer-containerG mt-5 mt-md-0 pt-3">
-            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
 
-                <div class=" col-md-3 my-5 mt-md-0 ">
-                    <img src="images/logo-dark.png" alt="" class="">
-                    <p class="my-4">Velit sed ante in nisl amet sapien. Mauris a ullamcorper ut iaculis. Et massa non eu
-                        ac tristique assa non eu ac tristique.</p>
-                    <div class="d-flex align-items-center ">
-                        <a href="#" target="_blank"><iconify-icon class="social-icon-footer active pe-4"
-                                icon="mdi:facebook"></iconify-icon></a>
-                        <a href="#" target="_blank"><iconify-icon class="social-icon-footer pe-4"
-                                icon="mdi:twitter"></iconify-icon></a>
-                        <a href="#" target="_blank"><iconify-icon class="social-icon-footer pe-4"
-                                icon="mdi:instagram"></iconify-icon></a>
-                        <a href="#" target="_blank"><iconify-icon class="social-icon-footer pe-4"
-                                icon="mdi:linkedin"></iconify-icon></a>
-                        <a href="#" target="_blank"><iconify-icon class="social-icon-footer pe-4"
-                                icon="mdi:youtube"></iconify-icon></a>
-                    </div>
-
-                </div>
-
-                <div class="col-md-2 offset-md-1">
-                    <h5 class="fs-5 mt-3 mt-md-0 mb-3">About us</h5>
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">About
-                                us</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">WHo are
-                                we</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">Why
-                                choose us</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">Our
-                                history</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h5 class="fs-5 mt-3 mt-md-0 mb-3">Our services</h5>
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">Our
-                                history</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">Tiring
-                                dressing</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">Wheel
-                                shine</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">Interior
-                                vacuum</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-2 ">
-                    <h5 class="fs-5 mt-3 mt-md-0 mb-3">Contact us</h5>
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">Our
-                                location</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#"
-                                class="nav-link text-uppercase p-0 ">Contact</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#"
-                                class="nav-link text-uppercase p-0 ">Address</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#"
-                                class="nav-link text-uppercase p-0 ">Facebook</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 ">
-                    <h5 class="fs-5 mt-3 mt-md-0 mb-3">More info</h5>
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item footer-list mb-3"><a href="#"
-                                class="nav-link text-uppercase p-0 ">VEhicle</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#" class="nav-link text-uppercase p-0 ">bike</a>
-                        </li>
-                        <li class="nav-item footer-list mb-3"><a href="#"
-                                class="nav-link text-uppercase p-0 ">Scooter</a>
-                        </li>
-                    </ul>
-                </div>
-
-
-
-
-            </footer>
+    <!-- Sidebar for Filters -->
+    <div class="sidebar">
+        <h4>Filters</h4>
+        <div class="mb-3">
+            <label for="modelYear" class="form-label">Model Year</label>
+            <select class="form-select" id="modelYear">
+                <option selected>Current</option>
+                <option value="previous">Previous</option>
+            </select>
         </div>
+        <div class="mb-3">
+            <label for="market" class="form-label">Market</label>
+            <select class="form-select" id="market">
+                <option selected>Personal</option>
+                <option value="commercial">Commercial</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="powerSource" class="form-label">Power Source</label>
+            <select class="form-select" id="powerSource">
+                <option selected>Gas</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="plug-in-hybrid">Plug-in Hybrid</option>
+                <option value="electric">Electric</option>
+                <option value="diesel">Diesel</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="bodyStyle" class="form-label">Body Style</label>
+            <select class="form-select" id="bodyStyle">
+                <option selected>Sedan</option>
+                <option value="convertible">Convertible</option>
+                <option value="truck-van">Truck & Van</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="suv-crossover">SUV & Crossover</option>
+            </select>
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
+            <button class="btn btn-secondary" id="resetFilters">Reset Filters</button>
+        </div>
+    </div>
 
+    <!-- Main Content Area -->
+    <div class="content">
+    <!-- Hero Section for Showroom -->
+    <section class="hero-showroom">
+        <div class="container">
+            <img src="Assets/Images/showroom.jpeg" alt="showroom" class="hero-image">
+            <div class="hero-content">
+                <h1>Explore Our Latest Vehicles</h1>
+                <p>Find the perfect Ford for your lifestyle, from powerful trucks to efficient electric cars.</p>
+                <a href="#vehicle-listings" class="btn btn-primary btn-lg">View All Vehicles</a>
+            </div>
+        </div>
+    </section>
 
+        <!-- Vehicle Listings Section -->
+        <section id="vehicle-listings" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">All Vehicles</h2>
+                <h2 class="text-center mb-5">SUVs & Crossovers</h2>
+                <div class="row">
+                    <!-- Example Vehicle Card 1 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="29515" data-category="suv" data-power="gas">
+                        <img src="Assets/Images/escape.avif" alt="Ford Escape">
+                        <div class="vehicle-card-body">
+                            <h5>2025 ESCAPE®</h5>
+                            <p class="price">Starting at $29,515</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 2 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="30995" data-category="suv" data-power="gas">
+                        <img src="Assets/Images/bronco sport.avif" alt="Ford Bronco Sport">
+                        <div class="vehicle-card-body">
+                            <h5>2025 BRONCO SPORT®</h5>
+                            <p class="price">Starting at $30,995</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 3 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37995" data-category="suv" data-power="electric">
+                        <img src="Assets/Images/mach-e.avif" alt="Ford Mustang Mach-E">
+                        <div class="vehicle-card-body">
+                            <h5>2025 MUSTANG MACH-E®</h5>
+                            <p class="price">Starting at $37,995</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 4 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38465" data-category="suv" data-power="gas">
+                        <img src="Assets/Images/edge.avif" alt="Ford Edge">
+                        <div class="vehicle-card-body">
+                            <h5>2024 EDGE®</h5>
+                            <p class="price">Starting at $38,465<br>EPA-Est. MPG 21 City/ 28 Hwy</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 5 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38995" data-category="suv" data-power="gas">
+                        <img src="Assets/Images/bronco.avif" alt="Ford Bronco">
+                        <div class="vehicle-card-body">
+                            <h5>2025 BRONCO®</h5>
+                            <p class="price">Starting at $38,995</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 6 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="40050" data-category="suv" data-power="gas">
+                        <img src="Assets/Images/explorer.avif" alt="Ford Explorer">
+                        <div class="vehicle-card-body">
+                            <h5>2025 EXPLORER®</h5>
+                            <p class="price">Starting at $40,050</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 7 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="62320" data-category="suv" data-power="gas">
+                        <img src="Assets/Images/expedition.avif" alt="Ford Expedition">
+                        <div class="vehicle-card-body">
+                            <h5>2025 EXPEDITION®</h5>
+                            <p class="price">Starting at $62,320</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5">Trucks & Vans</h2>
+                <div class="row">
+                    <!-- Example Vehicle Card 1 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="28145" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/maverick.avif" alt="Ford Maverick">
+                        <div class="vehicle-card-body">
+                            <h5>2025 MAVERICK®</h5>
+                            <p class="price">Starting at $28,145</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 2 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="33350" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/ranger.avif" alt="Ford Ranger">
+                        <div class="vehicle-card-body">
+                            <h5>2025 RANGER®</h5>
+                            <p class="price">Starting at $33,350</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 3 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="32000" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/f-150.avif" alt="Ford F-150">
+                        <div class="vehicle-card-body">
+                            <h5>2025 F-150®</h5>
+                            <p class="price">Starting at $38,810</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 4 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45300" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/superduty.avif" alt="Ford Super Duty">
+                        <div class="vehicle-card-body">
+                            <h5>2025 SUPER DUTY®</h5>
+                            <p class="price">Starting at $45,300</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 5 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54780" data-category="truck" data-power="electric">
+                        <img src="Assets/Images/f-150 lightning.avif" alt="Ford f-150 Lightning">
+                        <div class="vehicle-card-body">
+                            <h5>2025 F-150 LIGHTNING</h5>
+                            <p class="price">Starting at $54,780</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 6 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="56400" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/transit.avif" alt="Ford Transit">
+                        <div class="vehicle-card-body">
+                            <h5>2025 TRANSIT®</h5>
+                            <p class="price">Starting at $56,400</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5">Cars</h2>
+                <div class="row">
+                    <!-- Example Vehicle Card 1 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="31920" data-category="car" data-power="gas">
+                        <img src="Assets/Images/mustang.png" alt="mustang">
+                        <div class="vehicle-card-body">
+                            <h5>2025 MUSTANG®</h5>
+                            <p class="price">Starting at $31,920</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5">Electrified</h2>
+                <div class="row">
+                    <!-- Example Vehicle Card 1 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="32490" data-category="suv" data-power="hybrid">
+                        <img src="Assets/Images/escape.avif" alt="escape hybrid">
+                        <div class="vehicle-card-body">
+                            <h5>2025 ESCAPE HYBRID</h5>
+                            <p class="price">Starting at $32,490</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 2 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37400" data-category="suv" data-power="hybrid">
+                        <img src="Assets/Images/escape plug-in hybrid.avif" alt="Ford Escape Plug-in Hybrid">
+                        <div class="vehicle-card-body">
+                            <h5>2025 ESCAPE PLUGIN HYBRID</h5>
+                            <p class="price">Starting at $37,400</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 3 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37995" data-category="suv" data-power="electric">
+                        <img src="Assets/Images/mach-e.avif" alt="Ford Mustang mach-e">
+                        <div class="vehicle-card-body">
+                            <h5>2025 MUSTANG MACH-E®</h5>
+                            <p class="price">Starting at $37,995</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 4 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54780" data-category="truck-van" data-power="electric">
+                        <img src="Assets/Images/f-150 lightning.avif" alt="Ford f-150 Lightning">
+                        <div class="vehicle-card-body">
+                            <h5>2025 F-150 LIGHTNING®</h5>
+                            <p class="price">Starting at $54,780</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5">Commercial Vehicles</h2>
+                <div class="row">
+                    <!-- Example Vehicle Card 1 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38134" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/E-Series chassis.avif" alt="Ford E-Series Chassis">
+                        <div class="vehicle-card-body">
+                            <h5>2025 E-SERIES STRIPPED CHASSIS</h5>
+                            <p class="price">Starting at $38,134</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 2 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="41330" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/E-Series cutaway.avif" alt="Ford E-Series Cutaway">
+                        <div class="vehicle-card-body">
+                            <h5>2026 E-SERIES STRIPPED CUTAWAY</h5>
+                            <p class="price">Starting at $41,330</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 3 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="42125" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/F-Stripped chassis.avif" alt="Ford F-Series Chassis">
+                        <div class="vehicle-card-body">
+                            <h5>2025 F-STRIPPED CHASSIS</h5>
+                            <p class="price">Starting at $42,125</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 4 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="43700" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/transit cc-ca.avif" alt="Ford Transit">
+                        <div class="vehicle-card-body">
+                            <h5>2025 TRANSIT® CC-CA</h5>
+                            <p class="price">Starting at $43,700</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 5 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45300" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/superduty.avif" alt="Ford Super Duty">
+                        <div class="vehicle-card-body">
+                            <h5>2025 SUPER DUTY®</h5>
+                            <p class="price">Starting at $45,300</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 6 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45700" data-category="truck" data-power="electric">
+                        <img src="Assets/Images/e-transit.avif" alt="Ford e-transit">
+                        <div class="vehicle-card-body">
+                            <h5>2025 E- TRANSIT®</h5>
+                            <p class="price">Starting at $45,700</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 7 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="47400" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/transit.avif" alt="Ford E-Series Chassis">
+                        <div class="vehicle-card-body">
+                            <h5>2025 TRANSIT®</h5>
+                            <p class="price">Starting at $47,400</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 8 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="50165" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/chassis cab.avif" alt="Ford Chassis Cab">
+                        <div class="vehicle-card-body">
+                            <h5>2025 CHASSIS CAB</h5>
+                            <p class="price">Starting at $50,165</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 9 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="69995" data-category="truck" data-power="gas">
+                        <img src="Assets/Images/f-650.avif" alt="Ford F-650 - F-750">
+                        <div class="vehicle-card-body">
+                            <h5>2026 F-650 - F-750</h5>
+                            <p class="price">Starting at $69,995</p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5">Performance Vehicles</h2>
+                <div class="row">
+                    <!-- Example Vehicle Card 1 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="35000" data-category="car" data-power="gas">
+                        <img src="Assets/Images/gt-2017.avif" alt="Ford GT">
+                        <div class="vehicle-card-body">
+                            <h5>GT</h5>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 2 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="47205" data-category="suv" data-power="gas">
+                        <img src="Assets/Images/edge st.avif" alt="Ford Mustang Mach-E">
+                        <div class="vehicle-card-body">
+                            <h5>2024 EDGE ST</h5>
+                            <p class="price">Starting at $47,205</p>
+                        </div>
+                    </div>
+                    <!-- Example Vehicle Card 3 -->
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54770" data-category="suv" data-power="gas">
+                        <img src="Assets/Images/exporer st.avif" alt="Ford Bronco Sport">
+                        <div class="vehicle-card-body">
+                            <h5>2025 EXPLORER ST</h5>
+                            <p class="price">Starting at $54,770</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action / Promotional Section -->
+        <section class="py-5 bg-light text-center">
+            <div class="container">
+                <h2>Ready to Build Your Own Ford?</h2>
+                <p class="lead">Customize your dream vehicle with our intuitive Build & Price tool.</p>
+                <a href="about.html" class="btn btn-success btn-lg">Start Building Now</a>
+            </div>
+        </section>
+
+        <section id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Vehicles</h5>
+                        <ul>
+                            <li><a href="#">All Vehicles</a></li>
+                            <li><a href="#">SUVs & Crossovers</a></li>
+                            <li><a href="#">Trucks & Vans</a></li>
+                            <li><a href="#">Electrics</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Shopping Tools</h5>
+                        <ul>
+                            <li><a href="#">Build & Price</a></li>
+                            <li><a href="#">Search Inventory</a></li>
+                            <li><a href="#">Offers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Ownership</h5>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Ford</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Investors</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="social-links text-center py-4">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright text-center">
+                    <p>© 2025 Ford Motor Company. All Rights Reserved.</p>
+                </div>
+            </div>
+        </section>
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
 
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">
                 <div class="col-md-6 d-flex align-items-center">
-                    <p>© 2025 Ford Motors Corperation | All Rights Reserved</p>
+                    <p>© 2025 Ford Motors Corporation | All Rights Reserved</p>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-end">
                     <p class="">© 2025 Designed By:<a href="#" class="website-link text-decoration-none" target="_blank"> <b>Rei_Zenin</b></a></p></div>
             </footer>
         </div>
 
-
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     
+    <script src="Assets/Js/script.js"></script>
 </body>
 </html>
