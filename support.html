@@ -7,10 +7,11 @@
     <title>The Official Ford Support Site | Ford Owner Support</title>
     <link rel="icon" href="Assets/Images/Logo.png" type="image/png">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap CSS - CORRECTED INTEGRITY HASH -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Font Awesome CSS - ADDED -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- iconify library -->
-    <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>    <!-- iconify library -->
     <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>
 
     <!-- Style sheet -->
@@ -21,7 +22,7 @@
 <body>
     <nav class="navbar fixed-top navbar-expand-lg container-fluid p-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.png" alt="logo" style="height: 50px; width: auto; align-self: start; padding-bottom: 10px;"></a>
+            <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.png" alt="Ford Logo" style="height: 50px; width: auto; align-self: start; padding-bottom: 10px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <iconify-icon icon="system-uicons:menu-hamburger" class="hamburger-menu"></iconify-icon>
@@ -38,21 +39,9 @@
                             <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
                                 href="showroom.html">Vehicles</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-white text-uppercase mx-2 px-3 mb-2 mb-lg-0 dropdown-toggle"
-                                data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"
-                                href="#">Shop</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="about.html">Build & Price</a></li>
-                                <li><a href="blog.html">Search Inventory</a></li>
-                                <li><a href="blog-single.html">Locate Dealer</a></li>
-                                <li><a href="booking.html">Accessories</a></li>
-                                <li><a href="services.html">Merchandise</a></li>
-                                <li><a href="services-single.html">Special Offers</a></li>
-                                <li><a href="project.html">Certified Used</a></li>
-                                <li><a href="pricing.html">Ev Chargers</a></li>
-                                <li><a href="contact.html">Parts</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
+                                href="inventory.html">Inventory</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
@@ -62,60 +51,55 @@
                     
                     <!--right side of the nav bar-->
                     
-                    <div class="  d-flex mt-5 mt-lg-0 ps-lg-5 align-items-center justify-content-end ">
-                        <ul class="navbar-nav social-div justify-content-end align-items-center">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center px-3" href="#">
-                                    <iconify-icon icon="ri:search-fill" class="social-icon text-white"> Search</iconify-icon>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center px-3" href="#">
-                                    <iconify-icon icon="ri:profile-fill"
-                                        class="social-icon text-white"></iconify-icon>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center px-3" href="#">
-                                    <iconify-icon icon="ri:browser-line" class="social-icon text-white"></iconify-icon>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="d-flex align-items-center">
+                        <div class="search-container me-3">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search">
+                        </div>
+                        <div class="account-dropdown dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><button class="dropdown-item">Sign In</button></li>
+                                <li><button class="dropdown-item">Create Account</button></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-      <section class="support-section" style="position: relative; color: white; padding: 50px 0;">
+    <section class="support-section" style="position: relative; color: white; padding: 50px 0;">
+    <!-- Moved background-image to CSS for better practice -->
     <div class="support-background">
         <h2>How can we help you today?</h2>
         <input type="text" class="form-control" placeholder="Ask a question or search a keyword" style="width: 300px; margin-top: 20px;">
-    </div>
-
-    <div class="container mt-4 button-container">
-        <div class="row">
-            <div class="col-md-4 mb-3">
-                <button class="btn btn-primary w-100">FAQs</button>
-            </div>
-            <div class="col-md-4 mb-3">
-                <button class="btn btn-primary w-100">Contact Us</button>
-            </div>
-            <div class="col-md-4 mb-3">
-                <button class="btn btn-primary w-100">Live Chat</button>
-            </div>
-            <div class="col-md-4 mb-3">
-                <button class="btn btn-primary w-100">Warranty Information</button>
-            </div>
-            <div class="col-md-4 mb-3">
-                <button class="btn btn-primary w-100">Service Center Locator</button>
-            </div>
-            <div class="col-md-4 mb-3">
-                <button class="btn btn-primary w-100">Owner's Manual</button>
+        <div class="container mt-4 button-container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-primary w-100">FAQs</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-primary w-100">Contact Us</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-primary w-100">Live Chat</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-primary w-100">Warranty Information</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-primary w-100">Service Center Locator</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-primary w-100">Owner's Manual</button>
+                </div>
             </div>
         </div>
     </div>
-      </section>
+      </section
     
         <!-- Support Topics Section -->
         <section id="support-topics" class="support-topics-section">
@@ -174,34 +158,37 @@
                     <!-- Item 1 -->
                     <div class="col-sm-6 col-md-4 col-lg-3 px-2" style="scroll-snap-align: start;">
                         <div class="spotlight-card">
-                            <img src="Assets/Images/pike peaks.webp" alt="Ford Electric Vehicle" class="img-fluid rounded">
+                            <img src="Assets/Images/pike peaks.webp" alt="Ford Electric Vehicle at Pikes Peak" class="img-fluid rounded">
                             <h4 class="mt-3">Ford Wins at Pikes Peak</h4>
                             <p>The Super Mustang Mach-E® proved that our electric power can conquer any road. Winning DNA is in every Ford.</p>
-                            <button type="button" class="btn btn-fill-primary align-items-center " href="#">Take a Victory Lap</button>
+                            <!-- Changed button to anchor tag -->
+                            <a class="btn btn-fill-primary align-items-center" href="#">Take a Victory Lap</a>
                         </div>
                     </div>
                     <!-- Item 2 -->
                     <div class="col-sm-6 col-md-4 col-lg-3 px-2" style="scroll-snap-align: start;">
                         <div class="spotlight-card">
-                            <img src="Assets/Images/pickup.avif" alt="Ford Delivery" class="img-fluid rounded">
+                            <img src="Assets/Images/pickup.avif" alt="Ford Pickup & Delivery Service" class="img-fluid rounded">
                             <h4 class="mt-3">Pickup & Delivery</h4>
                             <p>Let your dealer pick up, service, and return your vehicle. It's complimentary.</p>
-                            <button type="button" class="btn btn-fill-primary align-items-center " href="#">Explore Pickup & Delivery</button>
+                            <!-- Changed button to anchor tag -->
+                            <a class="btn btn-fill-primary align-items-center" href="#">Explore Pickup & Delivery</a>
                         </div>
                     </div>
                     <!-- Item 3 -->
                     <div class="col-sm-6 col-md-4 col-lg-3 px-2" style="scroll-snap-align: start;">
                         <div class="spotlight-card">
-                            <img src="Assets/Images/mobile services.avif" alt="Ford Mustang" class="img-fluid rounded">
+                            <img src="Assets/Images/mobile services.avif" alt="Ford Mobile Service" class="img-fluid rounded">
                             <h4 class="mt-3">Mobile Service</h4>
                             <p>Get Ford Service just about wherever you are. We offer many routine services remotely - just tell us where to meet you.</p>
-                            <button type="button" class="btn btn-fill-primary align-items-center " href="#">Check Out Mobile Service</button>
+                            <!-- Changed button to anchor tag -->
+                            <a class="btn btn-fill-primary align-items-center" href="#">Check Out Mobile Service</a>
                         </div>
                     </div>
                     <!-- Item 4 -->
                     <div class="col-sm-6 col-md-4 col-lg-3 px-2" style="scroll-snap-align: start;">
                         <div class="spotlight-card">
-                            <img src="Assets/Images/fod digital experience.avif" alt="Ford Bronco" class="img-fluid rounded">
+                            <img src="Assets/Images/fod digital experience.avif" alt="Ford Bronco SUV" class="img-fluid rounded">
                             <h4 class="mt-3">Bronco</h4>
                             <p>Built Wild adventure</p>
                         </div>
@@ -209,7 +196,7 @@
                     <!-- Item 5 -->
                     <div class="col-sm-6 col-md-4 col-lg-3 px-2" style="scroll-snap-align: start;">
                         <div class="spotlight-card">
-                            <img src="Assets/Images/vehicle activation.avif" alt="Ford Ranger" class="img-fluid rounded">
+                            <img src="Assets/Images/vehicle activation.avif" alt="Ford Ranger Pickup Truck" class="img-fluid rounded">
                             <h4 class="mt-3">Ranger</h4>
                             <p>Midsize truck toughness</p>
                         </div>
@@ -217,7 +204,7 @@
                     <!-- Item 6 -->
                     <div class="col-sm-6 col-md-4 col-lg-3 px-2" style="scroll-snap-align: start;">
                         <div class="spotlight-card">
-                            <img src="Assets/Images/pair phone.avif" alt="Ford Explorer" class="img-fluid rounded">
+                            <img src="Assets/Images/pair phone.avif" alt="Ford Explorer SUV" class="img-fluid rounded">
                             <h4 class="mt-3">Explorer</h4>
                             <p>American adventure SUV</p>
                         </div>
@@ -225,7 +212,7 @@
                     <!-- Item 7 -->
                     <div class="col-sm-6 col-md-4 col-lg-3 px-2" style="scroll-snap-align: start;">
                         <div class="spotlight-card">
-                            <img src="Assets/Images/owners manual.avif" alt="Ford Transit" class="img-fluid rounded">
+                            <img src="Assets/Images/owners manual.avif" alt="Ford Transit Van" class="img-fluid rounded">
                             <h4 class="mt-3">Transit</h4>
                             <p>Work-ready vans</p>
                         </div>
@@ -233,7 +220,7 @@
                     <!-- Item 8 -->
                     <div class="col-sm-6 col-md-4 col-lg-3 px-2" style="scroll-snap-align: start;">
                         <div class="spotlight-card">
-                            <img src="Assets/Images/help yourself.avif" alt="Ford Technology" class="img-fluid rounded">
+                            <img src="Assets/Images/help yourself.avif" alt="Ford BlueCruise Technology" class="img-fluid rounded">
                             <h4 class="mt-3">BlueCruise</h4>
                             <p>Hands-free driving tech</p>
                         </div>
@@ -248,61 +235,79 @@
         <h2 class="text-center mb-4">FAQs</h2>
         <ul class="nav nav-tabs justify-content-center" id="powerTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="choose-tab" data-bs-toggle="tab" data-bs-target="#choose" type="button" role="tab" aria-controls="choose" aria-selected="true">Ownership</button>
+                <!-- Corrected data-bs-target to match tab-pane ID -->
+                <button class="nav-link active" id="choose-tab" data-bs-toggle="tab" data-bs-target="#ownership" type="button" role="tab" aria-controls="ownership" aria-selected="true">Ownership</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="gas-tab" data-bs-toggle="tab" data-bs-target="#transmission" type="button" role="tab" aria-controls="transmission" aria-selected="false">Vehicle Maintenance</button>
+                <!-- Corrected data-bs-target to match tab-pane ID -->
+                <button class="nav-link" id="gas-tab" data-bs-toggle="tab" data-bs-target="#maintenance" type="button" role="tab" aria-controls="maintenance" aria-selected="false">Vehicle Maintenance</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="hybrid-tab" data-bs-toggle="tab" data-bs-target="#battery" type="button" role="tab" aria-controls="battery" aria-selected="false">Technology</button>
+                <!-- Corrected data-bs-target to match tab-pane ID -->
+                <button class="nav-link" id="hybrid-tab" data-bs-toggle="tab" data-bs-target="#technology" type="button" role="tab" aria-controls="technology" aria-selected="false">Technology</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="electric-tab" data-bs-toggle="tab" data-bs-target="#performance" type="button" role="tab" aria-controls="performance" aria-selected="false">Electric Vehicles</button>
+                <!-- Corrected data-bs-target to match tab-pane ID -->
+                <button class="nav-link" id="electric-tab" data-bs-toggle="tab" data-bs-target="#electric-vehicles" type="button" role="tab" aria-controls="electric-vehicles" aria-selected="false">Electric Vehicles</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="diesel-tab" data-bs-toggle="tab" data-bs-target="#efficiency" type="button" role="tab" aria-controls="efficiency" aria-selected="false">Towing</button>
+                <!-- Corrected data-bs-target to match tab-pane ID -->
+                <button class="nav-link" id="diesel-tab" data-bs-toggle="tab" data-bs-target="#towing" type="button" role="tab" aria-controls="towing" aria-selected="false">Towing</button>
             </li>
         </ul>
         <div class="tab-content" id="powerTabContent">
             <!-- Ownership Tab -->
-            <div class="tab-pane fade show active" id="choose" role="tabpanel" aria-labelledby="choose-tab">
+            <!-- Removed duplicate 'show active' from other tabs -->
+            <div class="tab-pane fade show active" id="ownership" role="tabpanel" aria-labelledby="choose-tab">
                 <h4>Ownership Questions</h4>
                 <div class="accordion accordion-flush" id="ownershipAccordion">
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownershipQ1" aria-expanded="false" aria-controls="ownershipQ1">
-                            What are the benefits of ownership?
-                        </button>
-                        <div id="ownershipQ1" class="accordion-collapse collapse" aria-labelledby="ownershipQ1" data-bs-parent="#ownershipAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="ownershipHeading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownershipQ1" aria-expanded="false" aria-controls="ownershipQ1">
+                                What are the benefits of ownership?
+                            </button>
+                        </h2>
+                        <div id="ownershipQ1" class="accordion-collapse collapse" aria-labelledby="ownershipHeading1" data-bs-parent="#ownershipAccordion">
                             <div class="accordion-body">
                                 Ownership provides you with complete control of your vehicle, including customization options and no mileage restrictions.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownershipQ2" aria-expanded="false" aria-controls="ownershipQ2">
-                            What's included in the warranty?
-                        </button>
-                        <div id="ownershipQ2" class="accordion-collapse collapse" aria-labelledby="ownershipQ2" data-bs-parent="#ownershipAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="ownershipHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownershipQ2" aria-expanded="false" aria-controls="ownershipQ2">
+                                What's included in the warranty?
+                            </button>
+                        </h2>
+                        <div id="ownershipQ2" class="accordion-collapse collapse" aria-labelledby="ownershipHeading2" data-bs-parent="#ownershipAccordion">
                             <div class="accordion-body">
                                 Our comprehensive warranty covers all major components for 3 years or 36,000 miles, whichever comes first.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownershipQ3" aria-expanded="false" aria-controls="ownershipQ3">
-                            Can I transfer my warranty?
-                        </button>
-                        <div id="ownershipQ3" class="accordion-collapse collapse" aria-labelledby="ownershipQ3" data-bs-parent="#ownershipAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="ownershipHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownershipQ3" aria-expanded="false" aria-controls="ownershipQ3">
+                                Can I transfer my warranty?
+                            </button>
+                        </h2>
+                        <div id="ownershipQ3" class="accordion-collapse collapse" aria-labelledby="ownershipHeading3" data-bs-parent="#ownershipAccordion">
                             <div class="accordion-body">
                                 Yes, warranties are fully transferable to subsequent owners with minimal paperwork required.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownershipQ4" aria-expanded="false" aria-controls="ownershipQ4">
-                            What financing options are available?
-                        </button>
-                        <div id="ownershipQ4" class="accordion-collapse collapse" aria-labelledby="ownershipQ4" data-bs-parent="#ownershipAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="ownershipHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ownershipQ4" aria-expanded="false" aria-controls="ownershipQ4">
+                                What financing options are available?
+                            </button>
+                        </h2>
+                        <div id="ownershipQ4" class="accordion-collapse collapse" aria-labelledby="ownershipHeading4" data-bs-parent="#ownershipAccordion">
                             <div class="accordion-body">
                                 We offer competitive financing through our network of lenders, with terms ranging from 24 to 84 months.
                             </div>
@@ -312,44 +317,56 @@
             </div>
 
             <!-- Vehicle Maintenance Tab -->
-            <div class="tab-pane fade" id="transmission" role="tabpanel" aria-labelledby="gas-tab">
+            <div class="tab-pane fade" id="maintenance" role="tabpanel" aria-labelledby="gas-tab">
                 <h4>Vehicle Maintenance Questions</h4>
                 <div class="accordion accordion-flush" id="maintenanceAccordion">
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#maintenanceQ1" aria-expanded="false" aria-controls="maintenanceQ1">
-                            What's the recommended maintenance schedule?
-                        </button>
-                        <div id="maintenanceQ1" class="accordion-collapse collapse" aria-labelledby="maintenanceQ1" data-bs-parent="#maintenanceAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="maintenanceHeading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#maintenanceQ1" aria-expanded="false" aria-controls="maintenanceQ1">
+                                What's the recommended maintenance schedule?
+                            </button>
+                        </h2>
+                        <div id="maintenanceQ1" class="accordion-collapse collapse" aria-labelledby="maintenanceHeading1" data-bs-parent="#maintenanceAccordion">
                             <div class="accordion-body">
                                 Oil changes every 7,500 miles, tire rotations every 10,000 miles, and comprehensive inspections annually.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#maintenanceQ2" aria-expanded="false" aria-controls="maintenanceQ2">
-                            Where can I get service performed?
-                        </button>
-                        <div id="maintenanceQ2" class="accordion-collapse collapse" aria-labelledby="maintenanceQ2" data-bs-parent="#maintenanceAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="maintenanceHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#maintenanceQ2" aria-expanded="false" aria-controls="maintenanceQ2">
+                                Where can I get service performed?
+                            </button>
+                        </h2>
+                        <div id="maintenanceQ2" class="accordion-collapse collapse" aria-labelledby="maintenanceHeading2" data-bs-parent="#maintenanceAccordion">
                             <div class="accordion-body">
                                 Service is available at any authorized dealer nationwide, or at certified independent service centers.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#maintenanceQ3" aria-expanded="false" aria-controls="maintenanceQ3">
-                            How do I check service history?
-                        </button>
-                        <div id="maintenanceQ3" class="accordion-collapse collapse" aria-labelledby="maintenanceQ3" data-bs-parent="#maintenanceAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="maintenanceHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#maintenanceQ3" aria-expanded="false" aria-controls="maintenanceQ3">
+                                How do I check service history?
+                            </button>
+                        </h2>
+                        <div id="maintenanceQ3" class="accordion-collapse collapse" aria-labelledby="maintenanceHeading3" data-bs-parent="#maintenanceAccordion">
                             <div class="accordion-body">
                                 Full service history is available through your online owner's portal or at any authorized dealership.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#maintenanceQ4" aria-expanded="false" aria-controls="maintenanceQ4">
-                            What routine maintenance can I do myself?
-                        </button>
-                        <div id="maintenanceQ4" class="accordion-collapse collapse" aria-labelledby="maintenanceQ4" data-bs-parent="#maintenanceAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="maintenanceHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#maintenanceQ4" aria-expanded="false" aria-controls="maintenanceQ4">
+                                What routine maintenance can I do myself?
+                            </button>
+                        </h2>
+                        <div id="maintenanceQ4" class="accordion-collapse collapse" aria-labelledby="maintenanceHeading4" data-bs-parent="#maintenanceAccordion">
                             <div class="accordion-body">
                                 Many basic maintenance items like checking fluids, changing wiper blades, and replacing air filters can be done at home.
                             </div>
@@ -359,44 +376,56 @@
             </div>
 
             <!-- Technology Tab -->
-            <div class="tab-pane fade" id="battery" role="tabpanel" aria-labelledby="hybrid-tab">
+            <div class="tab-pane fade" id="technology" role="tabpanel" aria-labelledby="hybrid-tab">
                 <h4>Technology Questions</h4>
                 <div class="accordion accordion-flush" id="technologyAccordion">
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#technologyQ1" aria-expanded="false" aria-controls="technologyQ1">
-                            How does the infotainment system work?
-                        </button>
-                        <div id="technologyQ1" class="accordion-collapse collapse" aria-labelledby="technologyQ1" data-bs-parent="#technologyAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="technologyHeading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#technologyQ1" aria-expanded="false" aria-controls="technologyQ1">
+                                How does the infotainment system work?
+                            </button>
+                        </h2>
+                        <div id="technologyQ1" class="accordion-collapse collapse" aria-labelledby="technologyHeading1" data-bs-parent="#technologyAccordion">
                             <div class="accordion-body">
                                 Our system features intuitive touch controls, voice commands, and smartphone integration with Apple CarPlay and Android Auto.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#technologyQ2" aria-expanded="false" aria-controls="technologyQ2">
-                            How often are system updates available?
-                        </button>
-                        <div id="technologyQ2" class="accordion-collapse collapse" aria-labelledby="technologyQ2" data-bs-parent="#technologyAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="technologyHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#technologyQ2" aria-expanded="false" aria-controls="technologyQ2">
+                                How often are system updates available?
+                            </button>
+                        </h2>
+                        <div id="technologyQ2" class="accordion-collapse collapse" aria-labelledby="technologyHeading2" data-bs-parent="#technologyAccordion">
                             <div class="accordion-body">
                                 Updates are released quarterly and can be installed automatically via Wi-Fi or at your dealership.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#technologyQ3" aria-expanded="false" aria-controls="technologyQ3">
-                            What safety features are included?
-                        </button>
-                        <div id="technologyQ3" class="accordion-collapse collapse" aria-labelledby="technologyQ3" data-bs-parent="#technologyAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="technologyHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#technologyQ3" aria-expanded="false" aria-controls="technologyQ3">
+                                What safety features are included?
+                            </button>
+                        </h2>
+                        <div id="technologyQ3" class="accordion-collapse collapse" aria-labelledby="technologyHeading3" data-bs-parent="#technologyAccordion">
                             <div class="accordion-body">
                                 Standard safety features include adaptive cruise control, lane-keeping assist, automatic emergency braking, and blind spot monitoring.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#technologyQ4" aria-expanded="false" aria-controls="technologyQ4">
-                            Do you offer remote start?
-                        </button>
-                        <div id="technologyQ4" class="accordion-collapse collapse" aria-labelledby="technologyQ4" data-bs-parent="#technologyAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="technologyHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#technologyQ4" aria-expanded="false" aria-controls="technologyQ4">
+                                Do you offer remote start?
+                            </button>
+                        </h2>
+                        <div id="technologyQ4" class="accordion-collapse collapse" aria-labelledby="technologyHeading4" data-bs-parent="#technologyAccordion">
                             <div class="accordion-body">
                                 Yes, remote start is available through our smartphone app in all trims above the base model.
                             </div>
@@ -406,44 +435,56 @@
             </div>
 
             <!-- Electric Vehicles Tab -->
-            <div class="tab-pane fade" id="performance" role="tabpanel" aria-labelledby="electric-tab">
+            <div class="tab-pane fade" id="electric-vehicles" role="tabpanel" aria-labelledby="electric-tab">
                 <h4>Electric Vehicle Questions</h4>
                 <div class="accordion accordion-flush" id="evAccordion">
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evQ1" aria-expanded="false" aria-controls="evQ1">
-                            What's the expected battery lifespan?
-                        </button>
-                        <div id="evQ1" class="accordion-collapse collapse" aria-labelledby="evQ1" data-bs-parent="#evAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="evHeading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evQ1" aria-expanded="false" aria-controls="evQ1">
+                                What's the expected battery lifespan?
+                            </button>
+                        </h2>
+                        <div id="evQ1" class="accordion-collapse collapse" aria-labelledby="evHeading1" data-bs-parent="#evAccordion">
                             <div class="accordion-body">
                                 Our batteries are designed to retain at least 80% capacity after 8 years or 100,000 miles.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evQ2" aria-expanded="false" aria-controls="evQ2">
-                            Where can I charge my EV?
-                        </button>
-                        <div id="evQ2" class="accordion-collapse collapse" aria-labelledby="evQ2" data-bs-parent="#evAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="evHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evQ2" aria-expanded="false" aria-controls="evQ2">
+                                Where can I charge my EV?
+                            </button>
+                        </h2>
+                        <div id="evQ2" class="accordion-collapse collapse" aria-labelledby="evHeading2" data-bs-parent="#evAccordion">
                             <div class="accordion-body">
                                 You can charge at home with our included Level 2 charger, or at any public charging station nationwide.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evQ3" aria-expanded="false" aria-controls="evQ3">
-                            How long does charging take?
-                        </button>
-                        <div id="evQ3" class="accordion-collapse collapse" aria-labelledby="evQ3" data-bs-parent="#evAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="evHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evQ3" aria-expanded="false" aria-controls="evQ3">
+                                How long does charging take?
+                            </button>
+                        </h2>
+                        <div id="evQ3" class="accordion-collapse collapse" aria-labelledby="evHeading3" data-bs-parent="#evAccordion">
                             <div class="accordion-body">
                                 Fast charging can get you to 80% in under 30 minutes, while home charging typically takes 8-10 hours for a full charge.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evQ4" aria-expanded="false" aria-controls="evQ4">
-                            What maintenance does an EV require?
-                        </button>
-                        <div id="evQ4" class="accordion-collapse collapse" aria-labelledby="evQ4" data-bs-parent="#evAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="evHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#evQ4" aria-expanded="false" aria-controls="evQ4">
+                                What maintenance does an EV require?
+                            </button>
+                        </h2>
+                        <div id="evQ4" class="accordion-collapse collapse" aria-labelledby="evHeading4" data-bs-parent="#evAccordion">
                             <div class="accordion-body">
                                 EVs require minimal maintenance compared to gas vehicles - mainly tire rotations, brake inspections, and cabin air filter changes.
                             </div>
@@ -453,44 +494,56 @@
             </div>
 
             <!-- Towing Tab -->
-            <div class="tab-pane fade" id="efficiency" role="tabpanel" aria-labelledby="diesel-tab">
+            <div class="tab-pane fade" id="towing" role="tabpanel" aria-labelledby="diesel-tab">
                 <h4>Towing Questions</h4>
                 <div class="accordion accordion-flush" id="towingAccordion">
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#towingQ1" aria-expanded="false" aria-controls="towingQ1">
-                            What's the maximum towing capacity?
-                        </button>
-                        <div id="towingQ1" class="accordion-collapse collapse" aria-labelledby="towingQ1" data-bs-parent="#towingAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="towingHeading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#towingQ1" aria-expanded="false" aria-controls="towingQ1">
+                                What's the maximum towing capacity?
+                            </button>
+                        </h2>
+                        <div id="towingQ1" class="accordion-collapse collapse" aria-labelledby="towingHeading1" data-bs-parent="#towingAccordion">
                             <div class="accordion-body">
                                 Depending on model and configuration, our vehicles can tow between 5,000 and 12,000 pounds when properly equipped.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#towingQ2" aria-expanded="false" aria-controls="towingQ2">
-                            What hitch components are recommended?
-                        </button>
-                        <div id="towingQ2" class="accordion-collapse collapse" aria-labelledby="towingQ2" data-bs-parent="#towingAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="towingHeading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#towingQ2" aria-expanded="false" aria-controls="towingQ2">
+                                What hitch components are recommended?
+                            </button>
+                        </h2>
+                        <div id="towingQ2" class="accordion-collapse collapse" aria-labelledby="towingHeading2" data-bs-parent="#towingAccordion">
                             <div class="accordion-body">
                                 We recommend factory-installed hitch receivers with integrated wiring harnesses for optimal performance and safety.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#towingQ3" aria-expanded="false" aria-controls="towingQ3">
-                            Does towing affect my warranty?
-                        </button>
-                        <div id="towingQ3" class="accordion-collapse collapse" aria-labelledby="towingQ3" data-bs-parent="#towingAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="towingHeading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#towingQ3" aria-expanded="false" aria-controls="towingQ3">
+                                Does towing affect my warranty?
+                            </button>
+                        </h2>
+                        <div id="towingQ3" class="accordion-collapse collapse" aria-labelledby="towingHeading3" data-bs-parent="#towingAccordion">
                             <div class="accordion-body">
                                 Warranty coverage remains intact when operating within published towing limits with manufacturer-approved equipment.
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#towingQ4" aria-expanded="false" aria-controls="towingQ4">
-                            What driving adjustments should I make when towing?
-                        </button>
-                        <div id="towingQ4" class="accordion-collapse collapse" aria-labelledby="towingQ4" data-bs-parent="#towingAccordion">
+                        <!-- Added accordion-header structure -->
+                        <h2 class="accordion-header" id="towingHeading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#towingQ4" aria-expanded="false" aria-controls="towingQ4">
+                                What driving adjustments should I make when towing?
+                            </button>
+                        </h2>
+                        <div id="towingQ4" class="accordion-collapse collapse" aria-labelledby="towingHeading4" data-bs-parent="#towingAccordion">
                             <div class="accordion-body">
                                 When towing, increase following distance, anticipate braking earlier, use lower gears in hilly terrain, and distribute load evenly.
                             </div>
@@ -554,8 +607,8 @@
         </div>
 
 
-
-        <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
+        <!-- Removed redundant footer -->
+        <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer> -->
 
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">

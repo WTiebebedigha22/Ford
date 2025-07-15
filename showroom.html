@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar fixed-top navbar-expand-lg container-fluid p-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.png" alt="logo" style="height: 50px; width: auto; align-self: start; padding-bottom: 10px;"></a>
+            <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.png" alt="Ford Logo" style="height: 50px; width: auto; align-self: start; padding-bottom: 10px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <iconify-icon icon="system-uicons:menu-hamburger" class="hamburger-menu"></iconify-icon>
@@ -36,21 +36,9 @@
                             <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
                                 href="showroom.html">Vehicles</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-white text-uppercase mx-2 px-3 mb-2 mb-lg-0 dropdown-toggle"
-                                data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"
-                                href="#">Shop</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="about.html">Build & Price</a></li>
-                                <li><a href="blog.html">Search Inventory</a></li>
-                                <li><a href="blog-single.html">Locate Dealer</a></li>
-                                <li><a href="booking.html">Accessories</a></li>
-                                <li><a href="services.html">Merchandise</a></li>
-                                <li><a href="services-single.html">Special Offers</a></li>
-                                <li><a href="project.html">Certified Used</a></li>
-                                <li><a href="pricing.html">Ev Chargers</a></li>
-                                <li><a href="contact.html">Parts</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
+                                href="inventory.html">Inventory</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
@@ -60,71 +48,74 @@
                     
                     <!--right side of the nav bar-->
                     
-                    <div class="  d-flex mt-5 mt-lg-0 ps-lg-5 align-items-center justify-content-end ">
-                        <ul class="navbar-nav social-div justify-content-end align-items-center">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center px-3" href="#">
-                                    <iconify-icon icon="ri:search-fill" class="social-icon text-white"> Search</iconify-icon>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center px-3" href="#">
-                                    <iconify-icon icon="ri:profile-fill"
-                                        class="social-icon text-white"></iconify-icon>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center px-3" href="#">
-                                    <iconify-icon icon="ri:browser-line" class="social-icon text-white"></iconify-icon>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="d-flex align-items-center">
+                        <div class="search-container me-3">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search">
+                        </div>
+                        <div class="account-dropdown dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><button class="dropdown-item">Sign In</button></li>
+                                <li><button class="dropdown-item">Create Account</button></li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Sidebar for Filters -->
-    <div class="sidebar">
-        <h4>Filters</h4>
-        <div class="mb-3">
-            <label for="modelYear" class="form-label">Model Year</label>
-            <select class="form-select" id="modelYear">
-                <option selected>Current</option>
-                <option value="previous">Previous</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="market" class="form-label">Market</label>
-            <select class="form-select" id="market">
-                <option selected>Personal</option>
-                <option value="commercial">Commercial</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="powerSource" class="form-label">Power Source</label>
-            <select class="form-select" id="powerSource">
-                <option selected>Gas</option>
-                <option value="hybrid">Hybrid</option>
-                <option value="plug-in-hybrid">Plug-in Hybrid</option>
-                <option value="electric">Electric</option>
-                <option value="diesel">Diesel</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="bodyStyle" class="form-label">Body Style</label>
-            <select class="form-select" id="bodyStyle">
-                <option selected>Sedan</option>
-                <option value="convertible">Convertible</option>
-                <option value="truck-van">Truck & Van</option>
-                <option value="hatchback">Hatchback</option>
-                <option value="suv-crossover">SUV & Crossover</option>
-            </select>
-        </div>
-        <div class="d-grid gap-2">
-            <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
-            <button class="btn btn-secondary" id="resetFilters">Reset Filters</button>
+    <div class="sidebar-wrapper">
+        <div class="sidebar">
+            <button type="button" class="btn-close sidebar-close-btn" aria-label="Close"></button>
+            <h4>Filters</h4>
+            <div class="mb-3">
+                <label for="modelYear" class="form-label">Model Year</label>
+                <select class="form-select" id="modelYear">
+                    <option selected value="All">All</option> <!-- Added value="All" -->
+                    <option value="Current">Current</option>
+                    <option value="Previous">Previous</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="market" class="form-label">Market</label>
+                <select class="form-select" id="market">
+                    <option selected value="All">All</option> <!-- Added value="All" -->
+                    <option value="Personal">Personal</option>
+                    <option value="Commercial">Commercial</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="powerSource" class="form-label">Power Source</label>
+                <select class="form-select" id="powerSource">
+                    <option selected value="All">All</option> <!-- Added value="All" -->
+                    <option value="gas">Gas</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="plug-in-hybrid">Plug-in Hybrid</option>
+                    <option value="electric">Electric</option>
+                    <option value="diesel">Diesel</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="bodyStyle" class="form-label">Body Style</label>
+                <select class="form-select" id="bodyStyle">
+                    <option selected value="All">All</option> <!-- Added value="All" -->
+                    <option value="sedan">Sedan</option>
+                    <option value="convertible">Convertible</option>
+                    <option value="truck-van">Truck & Van</option>
+                    <option value="hatchback">Hatchback</option>
+                    <option value="suv-crossover">SUV & Crossover</option>
+                </select>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
+                <button class="btn btn-secondary" id="resetFilters">Reset Filters</button>
+            </div>
         </div>
     </div>
 
@@ -142,14 +133,23 @@
         </div>
     </section>
 
+    <!-- Filter Button -->
+        <div class="container mt-4 mb-4">
+            <button class="btn btn-info" id="openFilterSidebar">
+                <i class="fas fa-filter"></i> Show Filters
+            </button>
+        </div>
+
+
         <!-- Vehicle Listings Section -->
         <section id="vehicle-listings" class="py-5">
             <div class="container">
                 <h2 class="text-center mb-5">All Vehicles</h2>
                 <h2 class="text-center mb-5">SUVs & Crossovers</h2>
+                <div id="suvs-crossovers">
                 <div class="row">
                     <!-- Example Vehicle Card 1 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="29515" data-category="suv" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="29515" data-category="suv" data-power="gas" data-name="2025 ESCAPE®">
                         <img src="Assets/Images/escape.avif" alt="Ford Escape">
                         <div class="vehicle-card-body">
                             <h5>2025 ESCAPE®</h5>
@@ -157,7 +157,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 2 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="30995" data-category="suv" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="30995" data-category="suv" data-power="gas" data-name="2025 BRONCO SPORT®">
                         <img src="Assets/Images/bronco sport.avif" alt="Ford Bronco Sport">
                         <div class="vehicle-card-body">
                             <h5>2025 BRONCO SPORT®</h5>
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 3 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37995" data-category="suv" data-power="electric">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37995" data-category="suv" data-power="electric" data-name="2025 MUSTANG MACH-E®">
                         <img src="Assets/Images/mach-e.avif" alt="Ford Mustang Mach-E">
                         <div class="vehicle-card-body">
                             <h5>2025 MUSTANG MACH-E®</h5>
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 4 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38465" data-category="suv" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38465" data-category="suv" data-power="gas" data-name="2024 EDGE®">
                         <img src="Assets/Images/edge.avif" alt="Ford Edge">
                         <div class="vehicle-card-body">
                             <h5>2024 EDGE®</h5>
@@ -181,7 +181,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 5 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38995" data-category="suv" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38995" data-category="suv" data-power="gas" data-name="2025 BRONCO®">
                         <img src="Assets/Images/bronco.avif" alt="Ford Bronco">
                         <div class="vehicle-card-body">
                             <h5>2025 BRONCO®</h5>
@@ -189,7 +189,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 6 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="40050" data-category="suv" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="40050" data-category="suv" data-power="gas" data-name="2025 EXPLORER®">
                         <img src="Assets/Images/explorer.avif" alt="Ford Explorer">
                         <div class="vehicle-card-body">
                             <h5>2025 EXPLORER®</h5>
@@ -197,7 +197,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 7 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="62320" data-category="suv" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="62320" data-category="suv" data-power="gas" data-name="2025 EXPEDITION®">
                         <img src="Assets/Images/expedition.avif" alt="Ford Expedition">
                         <div class="vehicle-card-body">
                             <h5>2025 EXPEDITION®</h5>
@@ -205,10 +205,12 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 <h2 class="text-center mb-5">Trucks & Vans</h2>
+                <div id="trucks-vans">
                 <div class="row">
                     <!-- Example Vehicle Card 1 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="28145" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="28145" data-category="truck" data-power="gas" data-name="2025 MAVERICK®">
                         <img src="Assets/Images/maverick.avif" alt="Ford Maverick">
                         <div class="vehicle-card-body">
                             <h5>2025 MAVERICK®</h5>
@@ -216,7 +218,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 2 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="33350" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="33350" data-category="truck" data-power="gas" data-name="2025 RANGER®">
                         <img src="Assets/Images/ranger.avif" alt="Ford Ranger">
                         <div class="vehicle-card-body">
                             <h5>2025 RANGER®</h5>
@@ -224,7 +226,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 3 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="32000" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="32000" data-category="truck" data-power="gas" data-name="2025 F-150®">
                         <img src="Assets/Images/f-150.avif" alt="Ford F-150">
                         <div class="vehicle-card-body">
                             <h5>2025 F-150®</h5>
@@ -232,7 +234,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 4 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45300" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45300" data-category="truck" data-power="gas" data-name="2025 SUPER DUTY®">
                         <img src="Assets/Images/superduty.avif" alt="Ford Super Duty">
                         <div class="vehicle-card-body">
                             <h5>2025 SUPER DUTY®</h5>
@@ -240,7 +242,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 5 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54780" data-category="truck" data-power="electric">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54780" data-category="truck" data-power="electric" data-name="2025 F-150 LIGHTNING">
                         <img src="Assets/Images/f-150 lightning.avif" alt="Ford f-150 Lightning">
                         <div class="vehicle-card-body">
                             <h5>2025 F-150 LIGHTNING</h5>
@@ -248,7 +250,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 6 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="56400" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="56400" data-category="truck" data-power="gas" data-name="2025 TRANSIT®">
                         <img src="Assets/Images/transit.avif" alt="Ford Transit">
                         <div class="vehicle-card-body">
                             <h5>2025 TRANSIT®</h5>
@@ -256,10 +258,12 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 <h2 class="text-center mb-5">Cars</h2>
+                <div id="cars">
                 <div class="row">
                     <!-- Example Vehicle Card 1 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="31920" data-category="car" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="31920" data-category="car" data-power="gas" data-name="2025 MUSTANG®">
                         <img src="Assets/Images/mustang.png" alt="mustang">
                         <div class="vehicle-card-body">
                             <h5>2025 MUSTANG®</h5>
@@ -267,10 +271,12 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 <h2 class="text-center mb-5">Electrified</h2>
+                <div id="electrified">
                 <div class="row">
                     <!-- Example Vehicle Card 1 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="32490" data-category="suv" data-power="hybrid">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="32490" data-category="suv" data-power="hybrid" data-name="2025 ESCAPE HYBRID">
                         <img src="Assets/Images/escape.avif" alt="escape hybrid">
                         <div class="vehicle-card-body">
                             <h5>2025 ESCAPE HYBRID</h5>
@@ -278,7 +284,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 2 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37400" data-category="suv" data-power="hybrid">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37400" data-category="suv" data-power="hybrid" data-name="2025 ESCAPE PLUGIN HYBRID">
                         <img src="Assets/Images/escape plug-in hybrid.avif" alt="Ford Escape Plug-in Hybrid">
                         <div class="vehicle-card-body">
                             <h5>2025 ESCAPE PLUGIN HYBRID</h5>
@@ -286,7 +292,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 3 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37995" data-category="suv" data-power="electric">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="37995" data-category="suv" data-power="electric" data-name="2025 MUSTANG MACH-E®">
                         <img src="Assets/Images/mach-e.avif" alt="Ford Mustang mach-e">
                         <div class="vehicle-card-body">
                             <h5>2025 MUSTANG MACH-E®</h5>
@@ -294,7 +300,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 4 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54780" data-category="truck-van" data-power="electric">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54780" data-category="truck-van" data-power="electric" data-name="2025 F-150 LIGHTNING®">
                         <img src="Assets/Images/f-150 lightning.avif" alt="Ford f-150 Lightning">
                         <div class="vehicle-card-body">
                             <h5>2025 F-150 LIGHTNING®</h5>
@@ -302,10 +308,12 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 <h2 class="text-center mb-5">Commercial Vehicles</h2>
+                <div id="commercial-vehicles">
                 <div class="row">
                     <!-- Example Vehicle Card 1 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38134" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="38134" data-category="truck" data-power="gas" data-name="2025 E-SERIES STRIPPED CHASSIS">
                         <img src="Assets/Images/E-Series chassis.avif" alt="Ford E-Series Chassis">
                         <div class="vehicle-card-body">
                             <h5>2025 E-SERIES STRIPPED CHASSIS</h5>
@@ -313,7 +321,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 2 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="41330" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="41330" data-category="truck" data-power="gas" data-name="2026 E-SERIES STRIPPED CUTAWAY">
                         <img src="Assets/Images/E-Series cutaway.avif" alt="Ford E-Series Cutaway">
                         <div class="vehicle-card-body">
                             <h5>2026 E-SERIES STRIPPED CUTAWAY</h5>
@@ -321,7 +329,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 3 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="42125" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="42125" data-category="truck" data-power="gas" data-name="2025 F-STRIPPED CHASSIS">
                         <img src="Assets/Images/F-Stripped chassis.avif" alt="Ford F-Series Chassis">
                         <div class="vehicle-card-body">
                             <h5>2025 F-STRIPPED CHASSIS</h5>
@@ -329,7 +337,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 4 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="43700" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="43700" data-category="truck" data-power="gas" data-name="2025 TRANSIT® CC-CA">
                         <img src="Assets/Images/transit cc-ca.avif" alt="Ford Transit">
                         <div class="vehicle-card-body">
                             <h5>2025 TRANSIT® CC-CA</h5>
@@ -337,7 +345,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 5 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45300" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45300" data-category="truck" data-power="gas" data-name="2025 SUPER DUTY®">
                         <img src="Assets/Images/superduty.avif" alt="Ford Super Duty">
                         <div class="vehicle-card-body">
                             <h5>2025 SUPER DUTY®</h5>
@@ -345,7 +353,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 6 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45700" data-category="truck" data-power="electric">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="45700" data-category="truck" data-power="electric" data-name="2025 E- TRANSIT®">
                         <img src="Assets/Images/e-transit.avif" alt="Ford e-transit">
                         <div class="vehicle-card-body">
                             <h5>2025 E- TRANSIT®</h5>
@@ -353,7 +361,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 7 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="47400" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="47400" data-category="truck" data-power="gas" data-name="2025 TRANSIT®">
                         <img src="Assets/Images/transit.avif" alt="Ford E-Series Chassis">
                         <div class="vehicle-card-body">
                             <h5>2025 TRANSIT®</h5>
@@ -361,7 +369,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 8 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="50165" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="50165" data-category="truck" data-power="gas" data-name="2025 CHASSIS CAB">
                         <img src="Assets/Images/chassis cab.avif" alt="Ford Chassis Cab">
                         <div class="vehicle-card-body">
                             <h5>2025 CHASSIS CAB</h5>
@@ -369,7 +377,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 9 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="69995" data-category="truck" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="69995" data-category="truck" data-power="gas" data-name="2026 F-650 - F-750">
                         <img src="Assets/Images/f-650.avif" alt="Ford F-650 - F-750">
                         <div class="vehicle-card-body">
                             <h5>2026 F-650 - F-750</h5>
@@ -377,17 +385,19 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 <h2 class="text-center mb-5">Performance Vehicles</h2>
+                <div id="performance-vehicles">
                 <div class="row">
                     <!-- Example Vehicle Card 1 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="35000" data-category="car" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="35000" data-category="car" data-power="gas" data-name="GT">
                         <img src="Assets/Images/gt-2017.avif" alt="Ford GT">
                         <div class="vehicle-card-body">
                             <h5>GT</h5>
                         </div>
                     </div>
                     <!-- Example Vehicle Card 2 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="47205" data-category="suv" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="47205" data-category="suv" data-power="gas" data-name="2024 EDGE ST">
                         <img src="Assets/Images/edge st.avif" alt="Ford Mustang Mach-E">
                         <div class="vehicle-card-body">
                             <h5>2024 EDGE ST</h5>
@@ -395,7 +405,7 @@
                         </div>
                     </div>
                     <!-- Example Vehicle Card 3 -->
-                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54770" data-category="suv" data-power="gas">
+                    <div class="col-lg-4 col-md-6 vehicle-card" data-price="54770" data-category="suv" data-power="gas" data-name="2025 EXPLORER ST">
                         <img src="Assets/Images/exporer st.avif" alt="Ford Bronco Sport">
                         <div class="vehicle-card-body">
                             <h5>2025 EXPLORER ST</h5>
@@ -472,7 +482,8 @@
                     <p>© 2025 Ford Motors Corporation | All Rights Reserved</p>
                 </div>
                 <div class="col-md-6 d-flex align-items-center justify-content-end">
-                    <p class="">© 2025 Designed By:<a href="#" class="website-link text-decoration-none" target="_blank"> <b>Rei_Zenin</b></a></p></div>
+                    <p>© 2025 Designed By:<a href="#" class="website-link text-decoration-none" target="_blank"> <b>Rei_Zenin</b></a></p>
+                </div>
             </footer>
         </div>
 
