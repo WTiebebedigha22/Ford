@@ -14,8 +14,23 @@ body {
 .navbar {
     padding: 15px 0;
 }
+
+@media (max-width: 991.98px) {
+    .navbar .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .navbar-brand {
+        margin-right: 0 !important;
+    }
+    
+    .account-dropdown.dropdown {
+        margin-right: 0 !important;
+    }
+}
 .nav-link {
-    color: white !important;
+    color: white !important; /* This rule is problematic for the main navbar links */
     font-weight: 500;
 }
 .secondary-nav {
@@ -45,7 +60,7 @@ body {
     position: relative;
 }
 .navbar-nav .nav-link {
-    color: #000 !important; 
+    color: #000 !important; /* This overrides the general .nav-link rule, which is good */
     font-weight: 600;
     text-transform: uppercase;
     padding: 0.7rem 1rem;
@@ -67,7 +82,7 @@ body {
 /* Right-side Social/Utility Icons */
 .social-icon {
     font-size: 1.3rem;
-    color: #000; /* Already white */
+    color: #000; /* Already white - this comment is misleading, it's black */
     transition: color 0.3s ease;
 }
 
@@ -90,7 +105,7 @@ body {
 .navbar-nav .dropdown-menu {
     background-color: #ffffff; /* Keep solid for readability */
     border: none;
-    border-radius: 5%;
+    border-radius: 5%; /* This is likely meant to be 5px or a small percentage like 5% for a subtle curve */
     padding: 0.5rem 0;
     min-width: 200px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -133,7 +148,7 @@ body {
 }
 
 .dropdown-menu {
-    min-width: 2000px;
+    min-width: 2000px; /* This min-width is extremely large and likely a typo */
     z-index: 1000; /* Ensure dropdown appears above other elements */
 }
 
@@ -187,7 +202,7 @@ body {
         
         .tab-content,
         .tab-pane {
-            height: 100%;
+            height: 100%; /* This might cause issues if content overflows */
         }
         
         .object-fit-cover {
@@ -199,11 +214,11 @@ body {
     background-size: cover;
     background-position: center;
     color: #ffffff;
-    text-align: center;
+    text-align: center; /* This is overridden by justify-content: left */
     padding: 300px 0; /* Adjust padding as needed */
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: left; /* This aligns content to the left, conflicting with text-align: center */
     min-height: 60vh; /* Ensure it takes up a good portion of the viewport */
     margin-top: 70px; /* Offset for fixed navbar height */
 }
@@ -420,6 +435,7 @@ h2 {
     text-align: left; /* Align text to the left within each block */
 }
 
+.spirit img,
 .together img {
     max-width: 100%; /* Ensure images are responsive */
     height: auto; /* Maintain aspect ratio */
@@ -479,10 +495,11 @@ h2 {
 #power-tabs .nav-tabs {
     border-bottom: 2px solid #dee2e6;
     margin-bottom: 30px;
+    color: #001A42; /* This color property on .nav-tabs has no effect on text color */
 }
 
 #power-tabs .nav-tabs .nav-item .nav-link {
-    color: #495057;
+    color: #001A42;
     border: 1px solid transparent;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
@@ -493,13 +510,13 @@ h2 {
 
 #power-tabs .nav-tabs .nav-item .nav-link:hover {
     border-color: #e9ecef #e9ecef #dee2e6;
-    background-color: #e9ecef;
-    color: #001A42;
+    background-color: #0468cc; /* This background color is a bright blue, but the text color remains #001A42, which might not have enough contrast */
+    color: #001A42; /* Text color on hover */
 }
 
 #power-tabs .nav-tabs .nav-item .nav-link.active {
-    color: #001A42;
-    background-color: #fff;
+    color: #001A42; /* Text color for active tab */
+    background-color: #001A42; /* Background color for active tab */
     border-color: #dee2e6 #dee2e6 #fff;
     font-weight: 700;
 }
@@ -512,14 +529,20 @@ h2 {
 }
 
 #power-tabs .tab-content h3 {
-    color: #fff;
+    color: #fff; /* This makes the h3 white, but the background of the text container is transparent */
+    margin-bottom: 15px;
+    padding-bottom: 10px;;
+    font-size: 2.5rem;
+}
+#power-tabs .tab-content h4 {
+    color: #001A42;
     margin-bottom: 15px;
     padding-bottom: 10px;;
     font-size: 2.5rem;
 }
 
 #power-tabs .tab-content a {
-    color: #fff;
+    color: #fff; /* This makes the links white, but the background of the text container is transparent */
     line-height: 1.6;
     padding-bottom: 5px;
 }
@@ -530,39 +553,59 @@ h2 {
 }
 
 #power-tabs .tab-content img {
-    image-resolution: max;
+    image-resolution: max; /* This is not a standard CSS property */
     object-fit: cover;
     width: 100%;
 }
 
 /* Services Section */
 #services {
-    padding: 20px;
+    padding: 20px; /* Keep existing padding */
+    background-color: #001A42; /* Keep existing background color */
 }
 
 .services-cards {
     display: flex;
-    justify-content: space-between; /* Space between cards */
+    justify-content: center; /* Changed to center for better alignment on all screens */
     flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    gap: 20px; /* Add a gap between cards instead of relying on margin for spacing */
+    padding: 0 10px; /* Add some horizontal padding to the container */
 }
 
-.card {
+.services-cards .card { /* Target the card specifically within services-cards */
     background-color: white; /* Card background color */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    width: 30%; /* Width of each card */
-    margin: 10px; /* Margin around each card */
+    width: calc(33.333% - 20px); /* Calculate width for 3 columns with gap */
+    /* Removed: margin: 10px; - replaced by gap */
     padding: 20px; /* Padding inside each card */
     text-align: center; /* Center text */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    flex-shrink: 0; /* Prevent cards from shrinking too much */
+    flex-grow: 1; /* Allow cards to grow if space is available */
+    min-width: 280px; /* Ensure a minimum width for cards before wrapping */
 }
 
-.card img {
+.services-cards .card img {
     max-width: 100%; /* Responsive image */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Rounded corners for images */
+    margin-bottom: 15px; /* Space below image */
 }
 
-.btn {
+.services-cards .card h3 {
+    font-size: 1.4rem;
+    color: #001A42;
+    margin-bottom: 10px;
+}
+
+.services-cards .card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.services-cards .card .btn {
     margin-top: 10px; /* Space above button */
     padding: 10px 20px; /* Button padding */
     background-color: #001A42; /* Button background color */
@@ -570,10 +613,38 @@ h2 {
     border: none; /* Remove border */
     border-radius: 20px; /* Rounded corners for button */
     cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* Remove underline for anchor buttons */
+    display: inline-block; /* Ensure button behaves correctly */
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: navy; /* Darker shade on hover */
+.services-cards .card .btn:hover {
+    background-color: #00308F; /* Darker shade on hover */
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+/* For tablets and larger phones (e.g., 768px and below) */
+@media (max-width: 768px) {
+    .services-cards .card {
+        width: calc(50% - 20px); /* Two columns */
+        min-width: 300px; /* Ensure they don't get too small */
+    }
+}
+
+/* For mobile phones (e.g., 576px and below) */
+@media (max-width: 576px) {
+    .services-cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .services-cards .card {
+        width: 90%; /* Almost full width */
+        max-width: 400px; /* Prevent cards from becoming too wide on very large phones */
+        margin-bottom: 20px; /* Add space between stacked cards */
+    }
 }
 
 /*Showroom page */
@@ -654,21 +725,95 @@ h2 {
             background-color: #0056b3;
             border-color: #0056b3;
         }
-        .sidebar {
-            position: fixed;
-            top: 70px; /* Below the navbar */
-            left: 0;
-            width: 250px;
-            height: calc(100% - 70px);
-            background-color: #f8f9fa;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .content {
-            margin-left: 270px; /* Space for sidebar */
-            padding: 20px;
-        }
-        
+
+/* Sidebar Wrapper - controls the pop-out behavior */
+.sidebar-wrapper {
+    position: fixed; /* Use fixed to keep it in viewport even on scroll */
+    top: 0;
+    left: -300px; /* Start off-screen to the left */
+    width: 300px; /* Width of the sidebar */
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out; /* Smooth transition for sliding in/out */
+    z-index: 1050; /* Above main content, below navbar if navbar is higher */
+    overflow-y: auto; /* Enable scrolling for filters if content is long */
+    padding-top: 70px; /* Space for fixed navbar */
+}
+
+.sidebar-wrapper.open {
+    left: 0; /* Slide in when 'open' class is present */
+}
+
+/* Actual Sidebar Content Styling */
+.sidebar-content { /* New class for the inner content */
+    padding: 20px;
+    position: relative; /* For positioning the close button */
+}
+
+.sidebar-content h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #001A42;
+}
+
+.sidebar-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10; /* Ensure it's clickable */
+}
+
+/* Backdrop Overlay */
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1040; /* Below sidebar, above main content */
+    display: none; /* Hidden by default */
+}
+
+.sidebar-backdrop.show {
+    display: block; /* Show when 'show' class is present */
+}
+
+/* Main Content Area - remove permanent margin */
+.content {
+    margin-left: 0; /* Remove the fixed margin */
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out; /* Smooth transition if you decide to push content */
+}
+
+/* Optional: Push content when sidebar is open (uncomment if desired) */
+/*
+body.sidebar-open .content {
+    margin-left: 300px;
+}
+*/
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .sidebar-wrapper {
+        width: 250px; /* Slightly smaller sidebar on mobile */
+        left: -250px;
+    }
+    /* Optional: Push content when sidebar is open on mobile */
+    /*
+    body.sidebar-open .content {
+        margin-left: 250px;
+    }
+    */
+}
+
+/* Ensure the filter button is visible and styled */
+#openFilterSidebar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+      
 /* Support page */
 .support-section {
     position: relative;
@@ -678,10 +823,9 @@ h2 {
 
 .support-background {
     background: url('/Assets/Images/bronco_home.avif') center/cover;
-    height: 400px;
+    height: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
     align-items: center;
     position: relative;
 }
@@ -704,15 +848,42 @@ h2 {
 
 .support-section .btn {
     background-color: transparent;
-    border: 10px;
+    border: 10px; /* This is likely a typo, should be border-width: 10px; or border: 10px solid #fff; */
     border-color: #fff;
     padding: 15px;
     font-size: 1rem;
 }
 
+.support-section .support-background {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.support-section .support-background input[type="text"] {
+    margin-left: 0;
+}
+
+.button-container .row {
+    justify-content: flex-start; 
+}
+
+.button-container .col-md-4 {
+    max-width: 200px; 
+    flex: 0 0 auto; 
+    margin-right: 15px; 
+}
+
+/* Adjust for smaller screens if necessary */
+@media (max-width: 767.98px) {
+    .button-container .col-md-4 {
+        max-width: 100%; 
+        margin-right: 0;
+    }
+}
+
 .support-topics-section {
     padding: 50px 0;
-    background-color: #f9f9f9; /* Light background for contrast */
+    background-color: #f9f9f9; 
 }
 
 .support-topics-section h2 {
@@ -730,7 +901,7 @@ h2 {
 }
 
 .support-topic:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 .spotlight-slider {
             overflow-x: auto;
@@ -824,7 +995,7 @@ h2 {
     margin-top: 4rem;
 }
 
-.footer-containerG {
+.footer-containerG { /* This class is defined but not used in the provided HTML */
     padding-bottom: 2rem;
 }
 
@@ -860,7 +1031,7 @@ h2 {
     color: #ffffff;
 }
 
-#footer .footer-list .nav-link {
+#footer .footer-list .nav-link { /* This class is defined but not used in the provided HTML */
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
     transition: color 0.3s ease;
@@ -922,6 +1093,121 @@ h2 {
         flex: 1 1 calc(50% - 2rem); /* Two columns on medium screens */
     }
 }
+
+/* ways to pay */
+        .content-container {
+            max-width: 1180px;
+            margin: 0 auto 60px auto;
+            display: flex;
+            gap: 64px;
+            padding: 0 24px;
+        }
+        .left-content {
+            flex: 0 0 480px;
+        }
+        .left-content img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: rgba(18, 38, 63, 0.1) 0px 26px 30px -10px;
+            object-fit: contain;
+            background: #fff;
+        }
+        .right-content {
+            flex: 1;
+            font-size: 16px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        .right-content h2 {
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #212121;
+            user-select: none;
+        }
+        .right-content p strong {
+            font-weight: 700;
+            user-select: none;
+        }
+        .btn-container {
+            margin: 12px 0 20px 0;
+            display: flex;
+            gap: 12px;
+        }
+        button {
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            user-select: none;
+            min-width: 96px;
+            transition: all 0.2s ease;
+        }
+        .btn-signin {
+            background-color: #005fc7;
+            color: white;
+            border: none;
+        }
+        .btn-signin:hover {
+            background-color: #00429a;
+        }
+        .btn-register {
+            background: transparent;
+            color: #005fc7;
+            border: 1.8px solid #005fc7;
+        }
+        .btn-register:hover {
+            background: #e6f0ff;
+        }
+        hr.accordion-separator {
+            border: none;
+            border-top: 1px solid #dcdcdc;
+            margin: 20px 0 28px 0;
+        }
+        /* Accordion styles */
+        .accordion-item {
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .accordion-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212121;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+        }
+        .accordion-header:hover {
+            color: #005fc7;
+        }
+        .accordion-header svg {
+            width: 16px;
+            height: 16px;
+            stroke: #505050;
+            stroke-width: 2;
+            transition: transform 0.3s ease;
+        }
+        .accordion-header.expanded svg {
+            transform: rotate(180deg);
+            stroke: #005fc7;
+        }
+        .accordion-content {
+            margin-top: 8px;
+            padding-left: 2px;
+            color: #4a4a4a;
+            font-weight: 400;
+            font-size: 15px;
+            display: none;
+        }
+        .accordion-content.visible {
+            display: block;
+        }
 
 @media (max-width: 768px) {
     #hero .header-top {
