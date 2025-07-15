@@ -8,20 +8,22 @@
     <link rel="icon" href="Assets/Images/Logo.png" type="image/png">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- iconify library -->
-    <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>    <!-- iconify library -->
     <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>
 
     <!-- Style sheet -->
     <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
-
+    <link href="https://fonts.cdnfonts.com/css/ford-antenna" rel="stylesheet">
+                
 </head>
 <body>
     <header class="ford-header">
     <nav class="navbar fixed-top navbar-expand-lg container-fluid p-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.png" alt="logo" style="height: 50px; width: auto; align-self: start; padding-bottom: 10px;"></a>
+            <a class="navbar-brand" href="index.html"><img src="Assets/Images/Logo.png" alt="Ford Logo" style="height: 50px; width: auto; align-self: start; padding-bottom: 10px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <iconify-icon icon="system-uicons:menu-hamburger" class="hamburger-menu"></iconify-icon>
@@ -38,21 +40,9 @@
                             <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
                                 href="showroom.html">Vehicles</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-white text-uppercase mx-2 px-3 mb-2 mb-lg-0 dropdown-toggle"
-                                data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"
-                                href="#">Shop</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="about.html">Build & Price</a></li>
-                                <li><a href="blog.html">Search Inventory</a></li>
-                                <li><a href="blog-single.html">Locate Dealer</a></li>
-                                <li><a href="booking.html">Accessories</a></li>
-                                <li><a href="services.html">Merchandise</a></li>
-                                <li><a href="services-single.html">Special Offers</a></li>
-                                <li><a href="project.html">Certified Used</a></li>
-                                <li><a href="pricing.html">Ev Chargers</a></li>
-                                <li><a href="contact.html">Parts</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
+                                href="inventory.html">Inventory</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white text-uppercase  mx-2 px-3 mb-2 mb-lg-0"
@@ -74,9 +64,6 @@
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><button class="dropdown-item">Sign In</button></li>
                                 <li><button class="dropdown-item">Create Account</button></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Order Status</a></li>
-                                <li><a class="dropdown-item" href="#">Payment Center</a></li>
                             </ul>
                         </div>
                     </div>
@@ -102,27 +89,27 @@
         </div>
     </section>
 
-    <section id="Legends" style="background-color: darkblue;">
+    <section id="Legends" style="background-color: #001A42;">
         <h2>Two Legends Breaking New Ground</h2>
         <div class="model-cards">
             <div class="card">
-                <img src="Assets/Images/expedition home.avif">
+                <img src="Assets/Images/expedition home.avif" alt="2025 Ford Expedition">
                 <h3>Epic Family Memories on Every Trip</h3>
                 <p>The all-new 2025 Ford Expedition® and Expedition® MAX models are ready for family adventure and equipped for lifelong memories. They feature bold, thoughtfully designed exteriors and plush, adaptable interiors. Intently crafted to help you get more from every moment.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="Expedition.html">
+                <a class="btn btn-fill-primary align-items-center" href="Expedition.html">
                         Get Details 
-                </button>
+                </a>
             </div>
             <div class="card">
-                <img src="Assets/Images/lobo.avif">
+                <img src="Assets/Images/lobo.avif" alt="New F-150 Lobo Package">
                 <h3>The New F-150® Lobo™ Package</h3>
                 <p>Straight up, it’s all badass street machine. For those who feed off the pulse of the city after dark. With design that’s bold and loaded with attitude.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="f-150.html">
+                <a class="btn btn-fill-primary align-items-center" href="f-150.html">
                         Get Details 
-                </button>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">
-                        Get Details 
-                </button>
+                </a>
+                <a class="btn btn-fill-primary align-items-center" href="build.html">
+                        Build Your Own
+                </a>
             </div>
         </div>
     </section>
@@ -131,18 +118,18 @@
         <div class="beyond-content-wrapper">
             <div class="spirit">
                 <h3>The Spirit of Racing is in Every Ford</h3>
-                <p>Racing DNA is inside every Ford. <br> <a href="">Vehicle details</a> </p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">
+                <p>Racing DNA is inside every Ford. <br> <a href="#">Vehicle details</a> </p>
+                <a class="btn btn-fill-primary align-items-center" href="build.html">
                             Ford Performance 
-                </button>
+                </a>
             </div>
             <div class="together">
-                <img src="Assets/Images/behind the driver.avif">
+                <img src="Assets/Images/behind the driver.avif" alt="People working together">
                 <h3>Throughout America. <br>Across the Globe.</h3>
-                <p>Ford Building Together is an initiative dedicateed to giving back. Discover how we've leveraged the strength of our dealer network, along with our nonprofit partners.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">
+                <p>Ford Building Together is an initiative dedicated to giving back. Discover how we've leveraged the strength of our dealer network, along with our nonprofit partners.</p>
+                <a class="btn btn-fill-primary align-items-center" href="build.html">
                     Get Involved 
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -156,66 +143,66 @@
                 <button class="nav-link active" id="choose-tab" data-bs-toggle="tab" data-bs-target="#choose" type="button" role="tab" aria-controls="choose" aria-selected="true">Choose Your Power</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="gas-tab" data-bs-toggle="tab" data-bs-target="#transmission" type="button" role="tab" aria-controls="transmission" aria-selected="false">Gas + Ecoboost®</button>
+                <button class="nav-link" id="gas-tab" data-bs-toggle="tab" data-bs-target="#gas" type="button" role="tab" aria-controls="gas" aria-selected="false">Gas + Ecoboost®</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="hybrid-tab" data-bs-toggle="tab" data-bs-target="#battery" type="button" role="tab" aria-controls="battery" aria-selected="false">Hybrid</button>
+                <button class="nav-link" id="hybrid-tab" data-bs-toggle="tab" data-bs-target="#hybrid" type="button" role="tab" aria-controls="hybrid" aria-selected="false">Hybrid</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="electric-tab" data-bs-toggle="tab" data-bs-target="#performance" type="button" role="tab" aria-controls="performance" aria-selected="false">Electric</button>
+                <button class="nav-link" id="electric-tab" data-bs-toggle="tab" data-bs-target="#electric" type="button" role="tab" aria-controls="electric" aria-selected="false">Electric</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="diesel-tab" data-bs-toggle="tab" data-bs-target="#efficiency" type="button" role="tab" aria-controls="efficiency" aria-selected="false">Diesel</button>
+                <button class="nav-link" id="diesel-tab" data-bs-toggle="tab" data-bs-target="#diesel" type="button" role="tab" aria-controls="diesel" aria-selected="false">Diesel</button>
             </li>
         </ul>
         <div class="tab-content" id="powerTabContent">
             <div class="tab-pane fade show active" id="choose" role="tabpanel" aria-labelledby="choose-tab">
                 <div class="position-relative w-100 h-100">
-                    <img src="Assets/Images/power line.avif" class="w-100 h-100 object-fit-cover rounded" alt="power line illustration">
+                    <img src="Assets/Images/power line.avif" class="w-100 h-100 object-fit-cover rounded" alt="Power line illustration">
                     <div class="position-absolute bottom-0 start-0 p-3 text-white" style="background: transparent; border-top-right-radius: 8px;">
                         <h3 class="m-0">How Will You Power Up?</h3>
-                        <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">Pick a Powertrain </button><br>
-                        <a href="">Vehicle Details</a>
+                        <a class="btn btn-fill-primary align-items-center" href="build.html">Pick a Powertrain </a><br>
+                        <a href="#">Vehicle Details</a>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade show active" id="transmission" role="tabpanel" aria-labelledby="gas-tab">
+            <div class="tab-pane fade" id="gas" role="tabpanel" aria-labelledby="gas-tab">
                 <div class="position-relative w-100 h-100">
                     <img src="Assets/Images/gas tab.jpg" class="w-100 h-100 object-fit-cover rounded" alt="Gas + Ecoboost illustration">
                     <div class="position-absolute bottom-0 start-0 p-3 text-white" style="background: transparent; border-top-right-radius: 8px;">
                         <h3 class="m-0">Gas Power</h3>
-                        <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">Explore Gas + Ecoboost®</button><br>
-                        <a href="">Vehicle Details</a>
+                        <a class="btn btn-fill-primary align-items-center" href="build.html">Explore Gas + Ecoboost®</a><br>
+                        <a href="#">Vehicle Details</a>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="battery" role="tabpanel" aria-labelledby="hybrid-tab">
+            <div class="tab-pane fade" id="hybrid" role="tabpanel" aria-labelledby="hybrid-tab">
                 <div class="position-relative w-100 h-100">
                     <img src="Assets/Images/hybrid tab.avif" class="w-100 h-100 object-fit-cover rounded" alt="Hybrid line illustration">
                     <div class="position-absolute bottom-0 start-0 p-3 text-white" style="background: transparent; border-top-right-radius: 8px;">
                         <h3 class="m-0">Hybrid Versatility</h3>
-                        <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">Explore Hybrid Power</button><br>
-                        <a href="">Vehicle Details</a>
+                        <a class="btn btn-fill-primary align-items-center" href="build.html">Explore Hybrid Power</a><br>
+                        <a href="#">Vehicle Details</a>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="performance" role="tabpanel" aria-labelledby="electric-tab">
+            <div class="tab-pane fade" id="electric" role="tabpanel" aria-labelledby="electric-tab">
                 <div class="position-relative w-100 h-100">
                     <img src="Assets/Images/electric tab.avif" class="w-100 h-100 object-fit-cover rounded" alt="Electric line illustration">
                     <div class="position-absolute bottom-0 start-0 p-3 text-white" style="background: transparent; border-top-right-radius: 8px;">
                         <h3 class="m-0">All-Electric</h3>
-                        <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">Explore EV Power</button><br>
-                        <a href="">Vehicle Details</a>
+                        <a class="btn btn-fill-primary align-items-center" href="build.html">Explore EV Power</a><br>
+                        <a href="#">Vehicle Details</a>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="efficiency" role="tabpanel" aria-labelledby="diesel-tab">
+            <div class="tab-pane fade" id="diesel" role="tabpanel" aria-labelledby="diesel-tab">
                <div class="position-relative w-100 h-100">
-                    <img src="Assets/Images/disel tab.avif" class="w-100 h-100 object-fit-cover rounded" alt="power line illustration">
+                    <img src="Assets/Images/disel tab.avif" class="w-100 h-100 object-fit-cover rounded" alt="Diesel power illustration">
                     <div class="position-absolute bottom-0 start-0 p-3 text-white" style="background: transparent; border-top-right-radius: 8px;">
                         <h3 class="m-0">Diesel Muscle</h3>
-                        <button type="button" class="btn btn-fill-primary align-items-center " href="build.html">Explore Super Duty®</button><br>
-                        <a href="">Vehicle Details</a>
+                        <a class="btn btn-fill-primary align-items-center" href="build.html">Explore Super Duty®</a><br>
+                        <a href="#">Vehicle Details</a>
                     </div>
                 </div>
             </div>
@@ -223,25 +210,25 @@
     </div>
 </section>
 
-    <section id="services" style="background-color: darkblue;">
+    <section id="services" style="background-color: #001A42;">
         <div class="services-cards">
             <div class="card">
-                <img src="Assets/Images/hands.avif">
+                <img src="Assets/Images/hands.avif" alt="Hands-Free Highway Driving">
                 <h3>Hands-Free Highway Driving</h3>
                 <p>Experience the magic of hands-free highway driving on 97% of controlled access highways in U.S. and Canada.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="#">Explore BlueCruise</button>
+                <a class="btn btn-fill-primary align-items-center" href="#">Explore BlueCruise</a>
             </div>
             <div class="card">
-                <img src="Assets/Images/connected.jpg">
+                <img src="Assets/Images/connected.jpg" alt="Ford Connected Services">
                 <h3>Ford Connected Services</h3>
                 <p>Available features you can add-on to your Ford vehicle post-purchase to enrich your ownership experience.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="#">Explore Connected Services</button>
+                <a class="btn btn-fill-primary align-items-center" href="#">Explore Connected Services</a>
             </div>
             <div class="card">
-                <img src="Assets/Images/complimentary.avif">
+                <img src="Assets/Images/complimentary.avif" alt="Complimentary Mobile Service">
                 <h3>Complimentary Mobile Service</h3>
-                <p>Our Ford Mobile Service technicians cna perform a lot of the same services remotely that we do in the dealership. Oil and filter changes, brakes and more.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="#">Explore Mobile Service</button>
+                <p>Our Ford Mobile Service technicians can perform a lot of the same services remotely that we do in the dealership. Oil and filter changes, brakes and more.</p>
+                <a class="btn btn-fill-primary align-items-center" href="#">Explore Mobile Service</a>
             </div>
         </div>
     </section>
@@ -250,28 +237,28 @@
         <h2>Thrilling. Liberating. Hardworking. Iconic</h2>
         <div class="models-cards">
             <div class="card">
-                <img src="Assets/Images/mustang_home.webp">
+                <img src="Assets/Images/mustang_home.webp" alt="Ford Mustang">
                 <h3>Mustang®</h3>
                 <p>Raising heart rates for 60 years. Tailor the perfect Mustang for you, whether it's a workday or track day.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="mustang.html">
+                <a class="btn btn-fill-primary align-items-center" href="mustang.html">
                         Explore Mustang 
-                </button>
+                </a>
             </div>
             <div class="card">
-                <img src="Assets/Images/bronco_home.avif">
+                <img src="Assets/Images/bronco_home.avif" alt="Ford Bronco">
                 <h3>Bronco®</h3>
                 <p>The trail awaits. So take off the doors, strap in, and unleash the SUV that's synonymous with adventure.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="bronco.html">
+                <a class="btn btn-fill-primary align-items-center" href="bronco.html">
                         Explore Bronco
-                </button>
+                </a>
             </div>
             <div class="card">
-                <img src="Assets/Images/f150_home.avif">
+                <img src="Assets/Images/f150_home.avif" alt="Ford F-150">
                 <h3>F-150®</h3>
-                <p>If there's work ot be done or weekend fun to be had, just look around. A F-150 turck is probably there.</p>
-                <button type="button" class="btn btn-fill-primary align-items-center " href="f-150.html">
+                <p>If there's work to be done or weekend fun to be had, just look around. A F-150 truck is probably there.</p>
+                <a class="btn btn-fill-primary align-items-center" href="f-150.html">
                         Explore F-150 
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -283,11 +270,12 @@
                     <div class="col-md-6">
                         <h3>Send Me Ford Updates</h3>
                         <p>Don't miss out. Get the latest on our newest vehicles, offers, product updates and more.</p>
+                        <a class="btn btn-fill-primary align-items-center" href="#">Sign up </a>
                     </div>
                     <div class="col-md-6">
                         <form class="newsletter-form">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" required>
+                                <input type="email" class="form-control" placeholder="Enter your email" required>
                             </div>
                         </form>
                     </div>
@@ -344,7 +332,6 @@
             </div>
         </div>
     </footer>
-    </section>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
