@@ -9,9 +9,11 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Font Awesome CSS (for search/user icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- iconify library -->
-    <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>    <!-- iconify library -->
     <script src="https://code.iconify.design/1/1.0.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Style sheet -->
     <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
@@ -47,9 +49,9 @@
                                 href="support.html">Support & Service</a>
                         </li>
                     </ul>
-                    
+
                     <!--right side of the nav bar-->
-                    
+
                     <div class="d-flex align-items-center">
                         <div class="search-container me-3">
                             <i class="fas fa-search"></i>
@@ -70,26 +72,29 @@
         </div>
     </nav>
 
-    <section id="inventory" style="background-image:url(/Assets/Images/Inventory.jpeg);">
-        <div class="container padding-small">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-left">
-                    <h1 class="header-top text-white mb-4">Saved Items</h1>
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Your Saved Vehicles</h2>
+            <div id="inventory-items-container" class="row">
+                <div id="inventory-items" class="inventory-container">
+                    <!-- Will be populated by JavaScript -->
+                     <span id="inventory-count"></span>
+                     <p class="text-center">Loading saved items...</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="footer">
-                <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <h5>Vehicles</h5>
                     <ul>
-                        <li><a href="#">All Vehicles</a></li>
-                        <li><a href="#">SUVs & Crossovers</a></li>
-                        <li><a href="#">Trucks & Vans</a></li>
-                        <li><a href="#">Electrics</a></li>
+                        <li><a href="showroom.html">All Vehicles</a></li>
+                        <li><a href="showroom.html#suvs-crossovers">SUVs & Crossovers</a></li>
+                        <li><a href="showroom.html#trucks-vans">Trucks & Vans</a></li>
+                        <li><a href="showroom.html#electrified">Electric</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -125,29 +130,19 @@
             </div>
             <div class="copyright text-center">
                 <p>© 2025 Ford Motor Company. All Rights Reserved.</p>
+                <p>© 2025 Designed By:<a href="#" class="website-link text-decoration-none" target="_blank"> <b>Rei_Zenin</b></a></p>
             </div>
         </div>
-    </footer>
-
-        </div>
-
-
-
-        <footer class="d-flex flex-wrap justify-content-between align-items-center border-top"></footer>
-
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">
-                <div class="col-md-6 d-flex align-items-center">
-                    <p>© 2025 Ford Motors Corperation | All Rights Reserved</p>
-                </div>
-                <div class="col-md-6 d-flex align-items-center justify-content-end">
-                    <p class="">© 2025 Designed By:<a href="#" class="website-link text-decoration-none" target="_blank"> <b>Rei_Zenin</b></a></p></div>
-            </footer>
-        </div>
-
+    </section>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    
+    <!-- jQuery (needed for some plugins like Colorbox, Isotope) -->
+    <script src="MultipleFiles/jquery-1.11.0.min.js"></script>
+    <!-- Plugins (AOS, Isotope, Chocolat, Colorbox) -->
+    <script src="MultipleFiles/plugins.js"></script>
+    <!-- Custom Script -->
+    <script src="MultipleFiles/script.js"></script>
+
 </body>
 </html>
